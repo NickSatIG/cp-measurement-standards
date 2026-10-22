@@ -1,0 +1,806 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+<title>Costa Palmas Measurement Standards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one reading column on Stucco; brand serif headlines, mono annotations, Mexican vs international split in Jungle Green and Midnight Blue. */
+:root{
+  /* Costa Palmas brand palette */
+  --stucco:#FAF5EB; --dune:#E8E1D2; --palma:#E2C382; --clay:#E38A56;
+  --jungle:#1C3C25; --midnight:#222D3E; --coral:#C93800; --cortez:#79BCCA;
+  --bg:var(--stucco); --surface:#FFFFFF; --surface-2:#F4EFE4;
+  --ink:#000000; --muted:#5E5340; --rule:#D9CFBC; --rule-soft:var(--dune);
+  --mx:var(--jungle); --mx-tint:#E3EADF;
+  --intl:var(--midnight); --intl-tint:#E2E6EC;
+  --flag:var(--coral); --flag-tint:#F8E7DB;
+  --accent:var(--palma); --accent-ink:#000000;
+  --shadow:none;
+  /* Screen faces chosen for legibility (deviates from the CP brand faces, which are not web-licensed here) */
+  --display:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --serif:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --sans:"IBM Plex Sans","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A2230; --surface:#222D3E; --surface-2:#283447;
+    --ink:#FAF5EB; --muted:#BDB3A1; --rule:#3A475B; --rule-soft:#2F3B4E;
+    --mx:#A6C9AE; --mx-tint:#22352B;
+    --intl:#9FD0DB; --intl-tint:#22394A;
+    --flag:#E38A56; --flag-tint:#3A2A24;
+    --accent:#E2C382; --accent-ink:#1A2230;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A2230; --surface:#222D3E; --surface-2:#283447;
+  --ink:#FAF5EB; --muted:#BDB3A1; --rule:#3A475B; --rule-soft:#2F3B4E;
+  --mx:#A6C9AE; --mx-tint:#22352B;
+  --intl:#9FD0DB; --intl-tint:#22394A;
+  --flag:#E38A56; --flag-tint:#3A2A24;
+  --accent:#E2C382; --accent-ink:#1A2230;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--serif); font-size:15.5px; line-height:1.6; -webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display); font-weight:600; letter-spacing:-.005em; text-wrap:balance; margin:0}
+.lab{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase}
+:focus-visible{outline:2px solid var(--flag); outline-offset:2px}
+
+header.mast{border-bottom:3px solid var(--accent); background:var(--bg)}
+.mast-in{max-width:1240px; margin:0 auto; padding-inline:20px; padding-block:34px 26px}
+.eyebrow{color:var(--mx); margin-bottom:12px}
+h1{font-size:clamp(32px,5.4vw,52px); line-height:1.05}
+.sub{font-size:clamp(15px,2.1vw,19px); color:var(--muted); margin:10px 0 0; max-width:64ch}
+.mast-meta{display:flex; flex-wrap:wrap; gap:6px 26px; margin-top:18px; font-family:var(--mono); font-size:12px; color:var(--muted)}
+.mast-meta b{color:var(--ink); font-weight:400}
+
+.layout{max-width:1240px; margin:0 auto; padding-inline:20px; padding-block:0 40px; display:grid; grid-template-columns:240px minmax(0,1fr); gap:44px}
+nav.side{position:sticky; top:env(safe-area-inset-top,0px); align-self:start; padding-block:30px 20px; max-height:100vh; overflow:auto}
+nav.side h2{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 10px}
+nav.side ol{list-style:none; margin:0 0 22px; padding:0; display:grid; gap:2px}
+nav.side a{display:grid; grid-template-columns:22px minmax(0,1fr); gap:10px; align-items:center; padding:7px 8px; text-decoration:none; font-size:14.5px; line-height:1.25; border-left:2px solid transparent}
+nav.side a:hover{background:var(--surface)}
+nav.side a[aria-current="true"]{border-left-color:var(--flag); background:var(--surface)}
+.sw{width:22px; height:16px; border:1px solid rgba(0,0,0,.28); display:inline-block}
+.sw.blank{border-style:dashed; background:transparent; border-color:var(--rule)}
+nav.side .side-lbl{font-family:var(--sans); font-size:10.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+
+main{min-width:0; padding-block:30px 0}
+section{scroll-margin-top:16px}
+.intro{max-width:72ch; color:var(--muted); margin:0 0 8px}
+.intro b{color:var(--ink); font-weight:600}
+.howto{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule); margin:18px 0 6px}
+.howto div{background:var(--surface); padding:12px 14px; font-size:14px}
+.howto b{display:block; font-family:var(--sans); font-size:10.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--mx); margin-bottom:4px}
+
+.sec-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin:44px 0 6px}
+.sec-head h2{font-size:clamp(24px,3.4vw,32px)}
+.sec-num{font-family:var(--mono); font-size:13px; color:var(--muted)}
+.lede{color:var(--muted); max-width:70ch; margin:6px 0 0}
+
+/* category card */
+.cat{background:var(--surface); border:1px solid var(--rule); margin-top:22px; scroll-margin-top:16px}
+.cat-head{display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px; align-items:center; padding:18px 20px 14px; border-bottom:1px solid var(--rule-soft)}
+.cat-head .sw{width:46px; height:34px}
+.cat-head h3{font-size:clamp(23px,3vw,29px); line-height:1.1}
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px}
+.tag{font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 7px; border:1px solid var(--rule); color:var(--muted)}
+.tag.bld{border-color:var(--mx); color:var(--mx)}
+.tag.site{border-color:var(--intl); color:var(--intl)}
+.tag.pool{border-color:var(--muted); color:var(--muted)}
+.tag.prop{border-color:var(--flag); color:var(--flag)}
+.cat-what{padding:14px 20px 0; font-size:17px; margin:0}
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:14px; border-top:1px solid var(--rule-soft)}
+.col{padding:14px 20px 16px; min-width:0}
+.col+.col{border-left:1px solid var(--rule-soft)}
+.col h4{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin:0 0 8px}
+.col.in h4{color:var(--mx)}
+.col.out h4{color:var(--flag)}
+.col ul{list-style:none; margin:0; padding:0; display:grid; gap:6px; font-size:14.5px; line-height:1.45}
+.col li{display:grid; grid-template-columns:16px minmax(0,1fr); gap:6px}
+.col.in li::before{content:"+"; font-family:var(--mono); color:var(--mx); font-weight:700}
+.col.out li::before{content:"\2212"; font-family:var(--mono); color:var(--flag); font-weight:700}
+.calc{border-top:1px solid var(--rule-soft); padding:14px 20px 16px; background:var(--surface-2)}
+.calc h4{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin:0 0 8px; color:var(--ink)}
+.calc ol{margin:0; padding:0; list-style:none; counter-reset:c; display:grid; gap:6px; font-size:14.5px}
+.calc li{display:grid; grid-template-columns:24px minmax(0,1fr); gap:6px}
+.calc li::before{counter-increment:c; content:counter(c); font-family:var(--mono); font-size:12px; color:var(--muted); padding-top:2px}
+.fold{border-top:1px solid var(--rule-soft)}
+.fold>summary{list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 20px; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink)}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary:hover{background:var(--surface-2)}
+.fold-i{width:26px; height:26px; border:1px solid var(--rule); display:inline-grid; place-items:center; flex:none}
+.fold-i::before{content:""; width:8px; height:8px; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); transform:translateY(-2px) rotate(45deg); transition:transform .2s ease}
+.fold[open]>summary .fold-i::before{transform:translateY(2px) rotate(-135deg)}
+.fold>summary:hover .fold-i{border-color:var(--ink)}
+.fold .calc{border-top:none; padding-top:2px}
+.fold .eq{border-top:none}
+@media (prefers-reduced-motion:reduce){.fold-i::before{transition:none}}
+.eq{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--rule-soft)}
+.eq div{padding:12px 14px 14px 20px; font-size:13.5px; line-height:1.4; min-width:0}
+.eq div+div{border-left:1px solid var(--rule-soft); padding-left:14px}
+.eq b{display:block; font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.cat-foot{border-top:1px solid var(--rule-soft); padding:12px 20px 14px; display:grid; gap:8px}
+.note{font-size:14px; color:var(--muted); margin:0}
+.note b{color:var(--ink); font-weight:600}
+.refs{display:flex; flex-wrap:wrap; gap:4px 14px; align-items:baseline; font-size:13.5px}
+.refs .rl{font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.refs a{color:var(--intl); text-decoration:none; border-bottom:1px solid var(--rule)}
+.refs a:hover{border-bottom-color:var(--intl)}
+.refs a::after{content:" \2197"; font-size:.85em}
+.c{font-family:var(--mono); font-size:.88em; background:var(--surface-2); border:1px solid var(--rule-soft); padding:1px 4px; white-space:nowrap}
+.dag{color:var(--flag); font-weight:600}
+
+/* roll-up figure */
+.rollup{background:var(--surface); border:1px solid var(--rule); padding:18px; margin-top:18px; position:relative}
+.info-a{cursor:pointer}
+.info-a tspan{font:700 10.5px var(--sans); letter-spacing:.08em; fill:var(--flag); text-decoration:underline}
+.info-a:focus{outline:none}
+.info-a:focus tspan{fill:var(--ink)}
+.pop{position:absolute; z-index:20; width:min(440px,calc(100% - 24px)); background:var(--surface); color:var(--ink); border:1.5px solid var(--ink); padding:14px 16px 16px; box-shadow:0 8px 28px rgba(0,0,0,.22); font-size:14px; line-height:1.5}
+.pop b.r{display:block; font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:2px}
+.pop h4{font-size:19px; margin:0 26px 6px 0}
+.pop .f{display:block; font-family:var(--mono); font-size:12.5px; margin:0 0 8px; padding:6px 8px; background:var(--surface-2); border:1px solid var(--rule-soft)}
+.pop p{margin:0}
+.pop button{position:absolute; top:8px; right:8px; width:26px; height:26px; border:1px solid var(--rule); background:transparent; color:var(--ink); font-size:16px; line-height:1; cursor:pointer}
+.rollup svg{display:block; width:100%; min-width:640px; height:auto}
+.scroll{overflow-x:auto}
+.r-box{stroke:rgba(0,0,0,.35); stroke-width:1}
+.r-t{font:600 13px var(--serif); fill:#1a1a1a}
+.r-s{font:400 11px var(--mono); fill:#4a4234}
+.r-h{font:700 11px var(--sans); letter-spacing:.1em; fill:currentColor; text-transform:uppercase}
+.r-br{fill:none; stroke:currentColor; stroke-width:1.4}
+.r-f{font:400 12px var(--mono); fill:currentColor}
+.r-num{fill:none; stroke:var(--ink); stroke-width:3}
+.eff{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--rule-soft)}
+.eff div{padding:14px 20px; font-size:14px; line-height:1.45; min-width:0; border-bottom:1px solid var(--rule-soft)}
+.eff div:nth-child(odd){border-right:1px solid var(--rule-soft)}
+.eff b{display:block; font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:4px}
+.eff .f{display:block; font-family:var(--mono); font-size:13px; margin:4px 0 6px}
+@media (max-width:720px){.eff{grid-template-columns:1fr}.eff div:nth-child(odd){border-right:0}}
+.subhead{font-size:clamp(19px,2.4vw,23px); margin:30px 0 0}
+.howto-list{margin:10px 0 0; padding-left:20px; max-width:80ch; display:grid; gap:4px}
+.howto-list b{font-weight:600}
+.wk-in,.wk-x{width:110px; text-align:right; font:inherit; font-family:var(--mono); padding:4px 6px; border:1px solid var(--rule); background:var(--surface); color:var(--ink)}
+.wk-in:focus,.wk-x:focus,.wk-txt:focus{outline:2px solid var(--flag); outline-offset:1px}
+.wk-reset{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; margin-left:6px; border:1px solid var(--ink); background:transparent; color:var(--ink); cursor:pointer}
+.chk{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:1px; background:var(--rule-soft); border:1px solid var(--rule)}
+.chk li{background:var(--surface); padding:11px 16px; font-size:14.5px; display:grid; grid-template-columns:22px minmax(0,1fr); gap:8px}
+.chk li::before{content:""; width:13px; height:13px; border:1.5px solid var(--ink); margin-top:4px}
+.chk b{font-weight:600}
+.wk-txt{width:150px; font:inherit; padding:4px 6px; border:1px solid var(--rule); background:var(--surface); color:var(--ink)}
+.wk-warn{color:var(--flag); font-weight:600}
+.r-tot{fill:var(--surface-2); stroke:var(--ink); stroke-width:1.5}
+.r-tt{font:400 18px var(--display); fill:currentColor}
+.r-ln{stroke:currentColor; stroke-width:1.3; fill:none}
+.r-x{stroke:var(--muted); stroke-width:1.2; stroke-dasharray:4 4; fill:none}
+figure{margin:0}
+figcaption{font-size:13.5px; color:var(--muted); margin-top:10px; max-width:80ch}
+figcaption b{color:var(--ink); font-weight:600}
+
+/* plan sheet: drawn on paper in both themes so category swatches keep their legend colours */
+.sheet{background:#FAF5EB; color:#1a1a1a; border:1px solid var(--rule); padding:16px; margin-top:18px}
+.sheet svg{display:block; width:100%; min-width:620px; height:auto; max-width:900px}
+.sheet figcaption{color:#5E5340}
+.sheet figcaption b{color:#1a1a1a}
+.p-wall{fill:#1a1a1a; fill-opacity:.45; fill-rule:evenodd}
+.p-part{stroke:#1a1a1a; stroke-width:2}
+.p-roof{fill:none; stroke:#1a1a1a; stroke-width:1.2; stroke-dasharray:2 4}
+.p-ipms1{fill:none; stroke:#222D3E; stroke-width:3.5}
+.p-ipms2{fill:none; stroke:#222D3E; stroke-width:2; stroke-dasharray:9 5}
+.p-lbl{fill:#1a1a1a; font:600 12.5px var(--serif)}
+.p-sm{fill:#5E5340; font:400 11.5px var(--mono)}
+.p-leg{fill:#1a1a1a; font:700 11px var(--sans); letter-spacing:.08em}
+.p-bal{stroke:#1a1a1a; stroke-width:1.5}
+
+/* tables */
+.tscroll{overflow-x:auto; border:1px solid var(--rule); background:var(--surface); margin-top:16px}
+table{border-collapse:collapse; width:100%; min-width:720px; font-size:14px}
+th,td{text-align:left; vertical-align:top; padding:10px 13px; border-bottom:1px solid var(--rule-soft)}
+thead th{font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; background:var(--mx); color:var(--surface); border-bottom:none}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+tbody tr:nth-child(even){background:var(--surface-2)}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+td.bad{color:var(--flag); font-weight:600}
+tr.tot td{font-weight:700; border-top:2px solid var(--ink)}
+ul.notes{margin:12px 0 0; padding-left:18px; font-size:14.5px; display:grid; gap:4px}
+ol.proto{margin:16px 0 0; padding:0; list-style:none; counter-reset:p; display:grid; gap:1px; background:var(--rule-soft); border:1px solid var(--rule)}
+ol.proto li{background:var(--surface); padding:12px 16px; font-size:14.5px; display:grid; grid-template-columns:26px minmax(0,1fr); gap:6px}
+ol.proto li::before{counter-increment:p; content:counter(p); font-family:var(--mono); font-size:12px; color:var(--muted)}
+/* sub-lines and typology cards */
+.subs{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); border-top:1px solid var(--rule-soft); margin-top:14px}
+.sub{padding:14px 20px 16px; min-width:0}
+.sub+.sub{border-left:1px solid var(--rule-soft)}
+.sub h4{display:flex; gap:8px; align-items:center; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin:0 0 4px}
+.sub h4 .sw{width:18px; height:13px}
+.sub p{margin:0 0 8px; font-size:14px; color:var(--muted)}
+.sub ul{margin:0; padding-left:18px; font-size:14.5px; line-height:1.45; display:grid; gap:4px}
+.typo{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); border-top:1px solid var(--rule-soft); margin-top:14px}
+.typo>div{padding:14px 20px 16px; min-width:0}
+.typo>div+div{border-left:1px solid var(--rule-soft)}
+.typo .plan{background:#FAF5EB; color:#1a1a1a}
+.typo .plan svg{display:block; width:100%; height:auto}
+.zoomfig{display:block; width:100%; padding:0; margin:0; border:1px solid #D9CFBC; background:#fff; overflow:hidden; cursor:zoom-in; position:relative}
+.zoomfig img{display:block; width:100%; height:auto; transition:transform .25s ease; transform-origin:50% 50%}
+.zoomfig:hover img,.zoomfig:focus-visible img{transform:scale(2.4)}
+@media (hover:none){.zoomfig:hover img{transform:none}}
+@media (prefers-reduced-motion:reduce){.zoomfig img{transition:none}}
+.lb{position:fixed; inset:0; z-index:50; background:rgba(20,26,36,.86); display:grid; grid-template-rows:auto minmax(0,1fr); padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none}
+.lb-bar{display:flex; gap:8px; justify-content:flex-end; align-items:center; padding-bottom:10px}
+.lb-bar span{margin-right:auto; color:#FAF5EB; font-family:var(--sans); font-size:12px; letter-spacing:.06em}
+.lb-bar button{font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:7px 12px; border:1px solid #FAF5EB; background:transparent; color:#FAF5EB; cursor:pointer}
+.lb-view{overflow:auto; background:#fff; min-height:0}
+.lb-view img{display:block; max-width:100%; max-height:100%; margin:auto; cursor:zoom-in}
+.lb-view.full img{max-width:none; max-height:none; cursor:zoom-out}
+.typo .plan p{margin:6px 0 0; font-size:12.5px; color:#5E5340}
+.typo table{min-width:0; font-size:13.5px}
+.typo td,.typo th{padding:6px 9px}
+.typo td .sw{width:14px; height:11px; margin-right:6px; vertical-align:-1px}
+tr.hl td{color:var(--flag)}
+.ttabs{display:flex; flex-wrap:wrap; gap:0; margin-top:18px; border-bottom:2px solid var(--rule)}
+.ttabs button{font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:10px 16px; border:1px solid transparent; border-bottom:none; background:transparent; color:var(--muted); cursor:pointer; margin-bottom:-2px}
+.ttabs button[aria-selected="true"]{background:var(--surface); color:var(--ink); border-color:var(--rule); border-bottom:2px solid var(--surface)}
+.ttabs button:hover{color:var(--ink)}
+#typoCards .cat{margin-top:0; border-top:none}
+.worked{margin-top:22px; border:1px solid var(--rule); background:var(--surface)}
+.worked>summary{cursor:pointer; padding:14px 18px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; list-style-position:inside}
+.worked>summary .wk-h{font-family:var(--display); font-size:clamp(19px,2.4vw,23px)}
+.worked>summary .wk-s{font-family:var(--mono); font-size:13px; color:var(--muted)}
+.worked .wk-body{padding:0 18px 18px}
+.worked>summary .wk-kpis{flex-basis:100%; margin:6px 0 2px}
+.worked>summary{list-style:none; align-items:center}
+.worked>summary::-webkit-details-marker{display:none}
+.worked>summary .wk-tog{margin-left:auto; width:30px; height:30px; border:1px solid var(--rule); display:inline-grid; place-items:center; flex:none}
+.worked>summary .wk-tog::before{content:""; width:9px; height:9px; border-right:2px solid var(--ink); border-bottom:2px solid var(--ink); transform:translateY(-2px) rotate(45deg); transition:transform .2s ease}
+.worked[open]>summary .wk-tog::before{transform:translateY(2px) rotate(-135deg)}
+.worked>summary:hover .wk-tog{border-color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.worked>summary .wk-tog::before{transition:none}}
+.worked[open]>summary{border-bottom:1px solid var(--rule-soft); margin-bottom:12px}
+.worked table{min-width:560px}
+.wk-kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--rule-soft); border:1px solid var(--rule); margin:0 0 16px}
+.wk-kpis>div{background:var(--surface); padding:16px 18px 14px; min-width:0}
+.wk-kpis>div.hl{background:var(--surface-2)}
+.wk-big{display:block; font-family:var(--display); font-size:clamp(34px,5vw,48px); line-height:1; font-variant-numeric:tabular-nums}
+.wk-kpis>div.hl .wk-big{color:var(--flag)}
+.wk-kl{display:block; margin-top:8px; font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+@media (max-width:560px){.wk-kpis{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.subs,.typo{grid-template-columns:minmax(0,1fr)} .sub+.sub,.typo>div+div{border-left:none; border-top:1px solid var(--rule-soft)}}
+footer p{margin:0 0 8px}
+footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10px; color:var(--muted); font-size:13px}
+
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr); gap:0}
+  nav.side{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg); max-height:none; padding-block:10px; border-bottom:1px solid var(--rule); overflow-x:auto}
+  nav.side h2{display:none}
+  nav.side .navwrap{display:flex; gap:4px; width:max-content}
+  nav.side ol{display:flex; gap:4px; margin:0}
+  nav.side a{grid-template-columns:18px auto; font-size:13px; padding:6px 8px; border-left:none; border-bottom:2px solid transparent; white-space:nowrap}
+  nav.side a[aria-current="true"]{border-bottom-color:var(--flag)}
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .col+.col{border-left:none; border-top:1px solid var(--rule-soft)}
+  .eq{grid-template-columns:1fr 1fr}
+  .eq div{border-top:1px solid var(--rule-soft); padding-left:20px}
+  .eq div:nth-child(odd){border-left:none}
+}
+@media (max-width:900px){ section,.cat{scroll-margin-top:64px} }
+@media (max-width:480px){ .eq{grid-template-columns:minmax(0,1fr)} .eq div+div{border-left:none} }
+</style>
+
+<header class="mast">
+  <div class="mast-in">
+    <div class="eyebrow lab">Costa Palmas &middot; Irongate</div>
+    <h1>Measurement Standards</h1>
+    <p class="sub">What each area schedule includes, how it is measured, and the referenced standard.</p>
+    <div class="mast-meta">
+      <span>Costa Palmas development standard</span>
+      <span><b id="rev"></b>, issued <b id="issued"></b></span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="side" aria-label="Area categories">
+    <div class="navwrap">
+      <div><h2>Building area (vertical)</h2><ol id="navB"></ol></div>
+      <div><h2>Site area (horizontal)</h2><ol id="navS"></ol></div>
+      <div><h2>Reference</h2><ol id="navR"></ol></div>
+    </div>
+  </nav>
+
+  <main>
+    <h3 class="subhead" id="how-to-use" style="margin-top:8px; scroll-margin-top:16px">How to use this page</h3>
+    <p class="intro">Find the category as it appears in the area legend. Each card says what goes in, what goes elsewhere, how to measure it, what the published standards call it, and where to read more. Building categories add up to Total Gross Buildable Area. Site categories are reported separately and never added to it. Pool Area is grouped with the building categories but is never added to the total.</p>
+    <ul class="howto-list">
+      <li><b>Every figure</b> names its standard, edition and variant beneath it.</li>
+      <li><b>Units:</b> m2 first, ft2 second, converted once at the end.</li>
+      <li><b>Never merge</b> covered or open exterior area into a headline figure.</li>
+      <li><b>Vertical and horizontal:</b> Building Area, Pool Area included, is vertical scope. Site Area is horizontal scope.</li>
+      <li><b>Gross controls:</b> every figure is measured to the outer face of the external walls. Teams that need a net figure derive it: IPMS 2 = IPMS 1 &minus; enclosure delta.</li>
+      <li><b>Audience:</b> the internal development team and external consultants, including Architects of Record. Issued together with the Excel area schedule templates (Full and Simple), linked under Reference.</li>
+    </ul>
+
+
+
+    <section id="rollup">
+      <h3 class="subhead">How the categories add up</h3>
+      <figure class="rollup">
+        <div class="scroll" id="rollupSvg"></div>
+        <figcaption><b>Vertical and horizontal, never mixed.</b> Only the three building categories, with their sub-lines, sum to Total Gross Buildable Area. Pool Area sits with them as vertical scope but is reported on its own line and never added. Exterior Uncovered, Landscape Planting and Road are site areas, horizontal scope, reported separately and never added to the gross figure.</figcaption>
+      </figure>
+      <figure class="sheet" id="example">
+        <div class="scroll">
+        <svg viewBox="0 0 900 440" role="img" aria-label="Plan of an F&amp;B outlet: dining and bar in Interior AC Non-Revenue, kitchen and plant in BOH, covered terrace in Exterior Covered: Covered Non-Revenue, open terrace in Exterior Uncovered, with every category measured to the outer face of the external walls, so the categories add up to IPMS 1 plus the covered terrace.">
+          <rect id="pc-cov" x="60" y="300" width="440" height="62"/>
+          <rect id="pc-unc" x="60" y="362" width="440" height="46"/>
+          <rect class="p-roof" x="60" y="300" width="440" height="62"/>
+          <rect fill="#1a1a1a" x="66" y="352" width="8" height="8"/><rect fill="#1a1a1a" x="206" y="352" width="8" height="8"/><rect fill="#1a1a1a" x="346" y="352" width="8" height="8"/><rect fill="#1a1a1a" x="486" y="352" width="8" height="8"/>
+          <line class="p-bal" x1="60" y1="404" x2="500" y2="404"/><line class="p-bal" x1="60" y1="408" x2="500" y2="408"/>
+          <rect id="pc-iac" x="60" y="40" width="440" height="260"/>
+          <rect id="pc-boh1" x="60" y="40" width="172" height="160"/>
+          <rect id="pc-boh2" x="60" y="200" width="172" height="100"/>
+          <path class="p-wall" d="M60 40H500V300H60Z M72 52V288H488V52Z"/>
+          <line class="p-part" x1="232" y1="52" x2="232" y2="288"/>
+          <line class="p-part" x1="72" y1="200" x2="232" y2="200"/>
+          <rect x="392" y="52" width="96" height="70" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+          <rect id="pc-door" x="290" y="287" width="150" height="14"/>
+          <rect class="p-ipms1" x="60" y="40" width="440" height="260"/>
+          <text class="p-lbl" x="300" y="174">Dining</text><text class="p-sm" x="300" y="191">Interior AC: Non-Revenue</text>
+          <text class="p-lbl" x="404" y="92">Bar</text><text class="p-sm" x="404" y="108">Non-Revenue</text>
+          <text class="p-lbl" x="88" y="120">Kitchen</text><text class="p-sm" x="88" y="137">BOH (INT)</text>
+          <text class="p-lbl" x="88" y="244">Plant, store</text><text class="p-sm" x="88" y="261">BOH (EXT)</text>
+          <text class="p-lbl" x="88" y="335">Covered terrace</text><text class="p-sm" x="230" y="335">Exterior Covered: Covered Non-Revenue</text>
+          <text class="p-lbl" x="88" y="390">Open terrace</text><text class="p-sm" x="230" y="390">Exterior Uncovered</text>
+          <g transform="translate(570,96)">
+            <text class="p-leg" x="0" y="0">BOUNDARIES</text>
+            <line class="p-ipms1" x1="0" y1="24" x2="46" y2="24"/><text class="p-lbl" x="58" y="28">IPMS 1</text><text class="p-sm" x="58" y="44">outer face of external walls</text>
+            <line class="p-part" x1="0" y1="72" x2="46" y2="72"/><text class="p-lbl" x="58" y="76">Shared wall</text><text class="p-sm" x="58" y="92">split on its centreline</text>
+            <line class="p-roof" x1="0" y1="120" x2="46" y2="120"/><text class="p-lbl" x="58" y="124">Roof edge above</text>
+            <text class="p-leg" x="0" y="168">TOTAL GROSS BUILDABLE</text>
+            <text class="p-sm" x="0" y="186">Dining + bar + kitchen + plant</text>
+            <text class="p-sm" x="0" y="202">+ covered terrace</text>
+            <text class="p-sm" x="0" y="218">Open terrace is site area</text>
+          </g>
+        </svg>
+        </div>
+        <figcaption><b>Illustrative plan, not to scale.</b> The external walls (shaded) are counted in the category they enclose, so Interior AC + BOH (INT + EXT) equals IPMS 1 and nothing falls between categories. The enclosure line sets the boundary between Interior AC and Exterior Covered. Kitchen and plant are BOH even though they sit inside the same enclosure: the conditioned kitchen is BOH (INT), the unconditioned plant and store are BOH (EXT). The open terrace is reported on its own line and stays out of the gross figure. Dining and bar are FOH Non-Revenue: the outlet carries a P&amp;L but is not sold or rented, and its covered terrace is Exterior Covered: Covered Non-Revenue, so its development efficiency is 0% and construction efficiency is the measure that applies.</figcaption>
+      </figure>
+      <h3 class="subhead" id="efficiency-calcs">Efficiency Calculations</h3>
+      <figure class="rollup" style="margin-top:8px">
+        <div class="scroll" id="effSvg"></div>
+        <div class="pop" id="effPop" role="dialog" aria-labelledby="effPopH" hidden></div>
+        <figcaption><b>Efficiency is read from the same categories and sub-lines.</b> Because every square metre of the building, walls included, sits in exactly one category, the ratios need no extra measurement. Coloured bar = numerator, in the same colours as the area bar above; bracket = denominator. Report all three side by side for every building. Numbers are illustrative.</figcaption>
+      </figure>
+      <div class="calc" id="effCalc" style="border:1px solid var(--rule); border-top:none"></div>
+      <details class="worked" id="wkDetails">
+        <summary><span class="wk-h">Efficiency Example</span><span class="wk-tog" aria-hidden="true"></span>
+        <div class="wk-kpis" aria-live="polite"><div class="hl"><span class="wk-big" id="wk-k1"></span><span class="wk-kl">Development efficiency</span></div><div><span class="wk-big" id="wk-k2"></span><span class="wk-kl">Construction efficiency, enclosed</span></div><div><span class="wk-big" id="wk-k3"></span><span class="wk-kl">Construction efficiency, covered</span></div></div></summary>
+        <div class="wk-body">
+        <p class="intro" style="margin-top:0">Type the sub-line totals from the area schedule into the white cells. The subtotals, the ratios and the diagram above update as you type. Add IPMS 2 to see the enclosure delta and net to gross. The figures loaded are the worked example. <button type="button" id="wkReset" class="wk-reset">Reset to example</button></p>
+        <div class="tscroll" style="margin-top:8px"><table id="workedTbl"></table></div>
+        </div>
+      </details>
+    </section>
+
+    <h3 class="subhead" id="area-categories">Area Categories</h3>
+    <div id="cats"></div>
+
+
+    <section id="total">
+      <div class="sec-head"><h2>Total Gross Buildable Area</h2></div>
+      <div id="totalCard"></div>
+    </section>
+
+    <section id="typology">
+      <div class="sec-head"><h2>Examples per Typology</h2></div>
+      <div id="typoCards"></div>
+    </section>
+
+    <section id="other-metrics">
+      <div class="sec-head"><h2>Other Reported Metrics</h2></div>
+      <p class="lede">Reported with every area schedule, beside the categories. The calculator cells below are linked to the worked example in Efficiency Calculations, so IPMS 1, Sellable and Total Gross Buildable Area flow through. Numbers loaded are illustrative.</p>
+
+      <h3 class="subhead" style="font-size:19px">Unit blocks, keys and seats</h3>
+      <p class="intro" style="margin-top:6px">Block the Sellable area by unit type, with the number of units in each block, to get the average area per unit type. Enter seats for F&amp;B outlets. The check line flags any difference between the blocks and the Sellable line in the calculator.</p>
+      <div class="tscroll"><table id="unitTbl"></table></div>
+
+      <h3 class="subhead" style="font-size:19px">Envelope perimeter</h3>
+      <ul class="howto-list">
+        <li>Measure in plan along the <b>outer face of the external walls</b> that enclose Interior AC and BOH: the IPMS 1 boundary. One figure per floor.</li>
+        <li>Exclude balustrades and upstands of Exterior Covered, and detached structures (report those on their own line).</li>
+        <li>Report in m first, ft second, to the nearest 0.1 m.</li>
+        <li>Used for facade cost and for the Waller envelope efficiency (reference only): perfect perimeter (4 &times; &radic;IPMS 1 of the floor) &divide; actual perimeter.</li>
+      </ul>
+
+      <h3 class="subhead" style="font-size:19px">Floor-to-floor heights</h3>
+      <ul class="howto-list">
+        <li>Measure from the <b>top of structural slab to the top of the structural slab above</b>, for each level. For the top level, measure to the top of the roof structure.</li>
+        <li>Report per level in m to 0.01, and in ft-in, beside the level's area.</li>
+        <li>Gross facade area per level = envelope perimeter &times; floor-to-floor height. Facade to floor ratio = gross facade area &divide; IPMS 1.</li>
+      </ul>
+      <div class="tscroll"><table id="envTbl"></table></div>
+    </section>
+
+
+    <section id="purpose">
+      <div class="sec-head"><h2>Mandated standard by purpose</h2></div>
+      <p class="lede">The category figures above feed different decisions. Each decision has one controlling standard.</p>
+      <div class="tscroll"><table id="byPurpose"></table></div>
+    </section>
+
+    <section id="mapping">
+      <div class="sec-head"><h2>Reconciliation between standards</h2></div>
+      <p class="lede">The standards are not mathematically convertible. Use this to reconcile figures, never to apply a conversion factor.</p>
+      <div class="tscroll"><table id="mapTbl"></table></div>
+    </section>
+
+    <section id="protocol">
+      <div class="sec-head"><h2>Reporting protocol</h2></div>
+      <ol class="proto" id="proto"></ol>
+    </section>
+
+    <section id="checklist">
+      <div class="sec-head"><h2>Area schedule deliverable checklist</h2></div>
+      <p class="lede">What every consultant area schedule must include before it is accepted. Each line restates a rule already set out above.</p>
+      <ol class="chk" id="chkList"></ol>
+    </section>
+
+    <section id="glossary">
+      <div class="sec-head"><h2>Glossary</h2></div>
+      <p class="lede">One name per figure. Use the name in the first column in anything issued; the other names are listed so a figure quoted elsewhere can be traced back.</p>
+      <div class="tscroll"><table id="glossTbl"></table></div>
+    </section>
+
+    <footer><p><b>Change log:</b> every revision is summarized in <a href="CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG.md</a>, published with this page.</p><p><b>Rev. 4, 16 October 2026.</b> Branded Home typology now uses the CP Branded Home area plan (area schedule Rev. 1) and its figures, with hover zoom and click to enlarge; site-area lines added to its table; Waller envelope efficiency computed per building (Main House). Figures display to one decimal place. The calculator is renamed Efficiency Example, with the three headline ratios visible while collapsed. The Efficiency metrics section is removed: the ratio definitions moved to More info pop-ups, and CP Homes envelope efficiency became step 8 of How it is calculated. On every category card, How it is calculated and International references are collapsed sections. A How to use this page link was added to the side nav. Added 19 October 2026: the Yacht Club typology diagram is replaced with a blocking diagram coloured by area category, with the same zoom, and its table uses the concept area totals (Kid's Club counted in Interior AC). Added 22 October 2026: the Condo building typology now uses the Marina Cove Resi M13 Level 1 area plan and the totals from its area schedule (Rev. 0); the section is renamed Examples per Typology. Added 21 October 2026: screen typography changed for legibility to Source Serif 4, IBM Plex Sans and IBM Plex Mono, deviating from the CP brand faces.</p><p><b>Rev. 3, 15 October 2026.</b> Exterior Covered sub-lines renamed Covered Sellable and Covered Non-Revenue (Rev. 1 and 2: Revenue-tied and Public). Interior AC gains a third sub-line, Circulation: corridors, lift lobbies, guest stairs and guest lifts, which move from BOH; service lifts stay in BOH. Construction efficiency now uses occupiable area (Sellable + FOH Non-Revenue) as its numerator, over IPMS 1 for the enclosed basis and Total Gross Buildable Area for the covered basis; covered service areas stay in the gross but are not occupiable. Development efficiency is unchanged, with a note that balconies count. Gross confirmed as the controlling figure, with net derived from it. Calculator made collapsible; Open items removed; audience stated; typology examples titled for Gulf Villa, Yacht Club, Casa Blake Phase 2 and a condo building, still illustrative.</p><p><b>Rev. 2, 15 October 2026.</b> Added: a glossary of the names each figure goes by; the enclosure delta (IPMS 1 − IPMS 2) as a reconciling line for teams that measure Interior AC to the finish face, in the efficiency metrics and the calculator; an Other Reported Metrics section after the area categories, with unit blocks, keys and seats, envelope perimeter and floor-to-floor heights, all linked to the calculator; an open items table; and an area schedule deliverable checklist. BOH split into two sub-lines, BOH (INT): Conditioned and BOH (EXT): Unconditioned, both enclosed and both counted in Total Gross Buildable Area; this replaces the Rev. 1 meaning of BOH (EXT). Roofed but unenclosed service areas moved to Exterior Covered: Public, and open service yards and pads to Exterior Uncovered. No ratio definition changed, and Rev. 1 is kept so it can be restored.</p><p><b>Rev. 1, 14 October 2026.</b> Interior AC and Exterior Covered split into revenue and non-revenue sub-lines. Pool Area moved under Building Area, outside the gross total, and measured to the pool shell as well as the water surface. Efficiency rewritten as development and construction efficiency, with a worked example and typology examples; Waller envelope efficiency added for reference. Vertical and horizontal scope defined. CP column added to the standard-by-purpose table. Reporting protocol updated for sub-categories, unit blocks and cost split.</p><p>Prepared for Irongate. Rules marked <b>Proposed project standard</b> go beyond the published standards and take effect once ratified by Irongate. Mexican legal positions require confirmation by each project&rsquo;s Mexican counsel and the Director Responsable de Obra. Paid standards link to the publisher&rsquo;s page.</p></footer>
+  </main>
+</div>
+
+<script>
+const DATA = {"content": {"meta": {"rev": "Rev. 4 (Draft for Owner review)", "issued": "16 October 2026"}, "measurement": {"intro": ["Area is the currency of this Project. It sets the operator's key count and departmental programme, the construction cost per square metre, the appraisal, the sales price of every residence, the condominium indiviso, and the comparison between competing operator proposals. It is also the single most common source of irreconcilable numbers on a mixed use resort, because each party measures to the convention of their own discipline and nobody says which one they used.", "This section removes that ambiguity. It mandates a standard for each purpose, provides a mapping between the standards so that numbers can be reconciled rather than re-measured, and sets a reporting protocol.", "BOMA is deliberately not the primary standard here. The BOMA floor measurement standards were developed for office and multi-unit residential leasing and they fit neither detached branded residences nor hotel back of house well. BOMA Gross Areas remains in use for whole building gross accounting and for benchmarking, where it is genuinely useful."], "byPurpose": [["Entitlement compliance: superficie construida, COS, CUS, height and setback", "The definitions in the applicable Programa de Desarrollo Urbano and the Reglamento de Construcciones del Estado de BCS", "Architect of Record and DRO", "This is the only measurement that determines whether the Project can be built. It is not interchangeable with any of the standards below.", "Interior AC, BOH (INT and EXT) and, where the DRO confirms, Exterior Covered feed superficie construida; building footprint and Road feed COS. Reported on its own and never substituted for Total Gross Buildable Area."], ["Whole building area for benchmarking, cost per square metre and operator comparison", "IPMS 1 and IPMS 2 (IPMS: All Buildings, published 15 January 2023, which supersedes the earlier IPMS Office, Residential, Industrial and Retail standards)", "Architect of Record", "IPMS 1 measures to the external extent of external walls, including external floor areas and sheltered areas. IPMS 2 measures to the internal dominant face. Report both. Every operator comparison in the Project is normalised to IPMS 2.", "Interior AC + BOH (INT + EXT) = IPMS 1 per building. Total Gross Buildable Area = IPMS 1 + Exterior Covered. IPMS 2 is the net interior reference for teams that need it."], ["Hotel guestroom area, key count and departmental area allocation", "IPMS 3.2 for individual keys; the IPMS Component Areas framework for departmental allocation; the Operator brand standard governs key count, key mix and minimum key size", "Architect of Record with the Operator", "Where the Operator's brand standard uses its own area definition, the architect reports both the brand figure and the IPMS 3.2 figure, and states the difference. Never substitute one for the other silently.", "Each key is Interior AC: Sellable / Revenue, measured to the demising-wall centreline; its balcony is Exterior Covered: Covered Sellable. Both feed development efficiency and area per key."], ["Branded single-family residence saleable area", "ANSI Z765-2021, Square Footage: Method for Calculating, for above grade finished gross living area, reported alongside IPMS 3.1", "Architect of Record with the sales and marketing team", "ANSI Z765 is what a US buyer, a US appraiser and Fannie Mae understand by square footage. IPMS 3.1 is what an international buyer and an institutional valuer understand. Report both against every villa type. They will not match and that is expected.", "The residence is Interior AC: Sellable / Revenue. ANSI Z765 and IPMS 3.1 are reported beside it for sales; the CP category is the development and cost figure."], ["Residence covered and uncovered exterior area", "IPMS External Floor Area and Sheltered Area, reported separately by category", "Architect of Record", "Terraces, loggias, covered outdoor living rooms, detached casitas, pool pavilions and plunge pool decks are never merged into gross living area or into a single headline square footage. On this product type exterior area is often 40 to 70 per cent of interior area and merging them is the fastest route to a misrepresentation claim.", "Covered terraces and loggias are Exterior Covered: Covered Sellable; open terraces are Exterior Uncovered, a site area. Neither is merged into the sellable interior figure."], ["Site wide gross area accounting, energy benchmarking and construction cost per gross square metre", "BOMA Gross Areas: Standard Methods of Measurement, Z65.3, 3rd edition, released 4 November 2024 (the 2018 edition, ANSI/BOMA Z65.3-2018, remains widely referenced; state which edition is used)", "Cost consultant with the Architect of Record", "Use the Construction Method for cost planning and the International Comparison Method where numbers are to be compared with IPMS. The 2024 edition added ENERGY STAR compatibility and additional unenclosed area categories, which matter for a resort with extensive covered outdoor space.", "Vertical cost per m2 uses Total Gross Buildable Area; pool cost uses pool shell area; horizontal cost uses the site categories."], ["Condominium regime, escritura and conveyance", "Mexican notarial practice under the Regimen de Propiedad en Condominio: superficie privativa plus the proporcion indivisa of common area, as recorded in the escritura constitutiva and supported by a registered survey", "Mexican counsel with a Mexican licensed surveyor (perito)", "This is the legally operative area for every sale. It governs over every other figure in this section for conveyance purposes. Reconcile it to ANSI Z765 and IPMS 3.1 before the first residence is released for sale, not afterwards.", "Superficie privativa reconciles to Interior AC: Sellable plus Exterior Covered: Covered Sellable for each unit, with differences explained in the reconciliation memorandum."], ["Departmental operating statement and area to revenue mapping", "USALI, 12th Revised Edition, mandatory for fiscal years beginning on or after 1 January 2026", "Operator with the Owner's asset management team", "USALI is an accounting standard and not an area measurement standard. It is listed here because departmental definitions in USALI 12 determine how space is allocated to revenue and cost centres in the proforma. Align the area programme to USALI departments so the programme and the model speak the same language.", "Every space carries a USALI department in the area schedule. A USALI revenue department such as F&B is still FOH Non-Revenue for development efficiency, because it is not sold or rented as accommodation."]], "mapping": {"headers": ["Area concept", "IPMS: All Buildings (2023)", "BOMA Gross Areas Z65.3", "ANSI Z765-2021", "Mexican practice (entitlement and escritura)"], "rows": [["External envelope footprint including external walls", "IPMS 1", "Gross Area 4, Construction Method", "Not measured; ANSI measures to exterior finished surface for GLA", "Superficie construida, per the PDU and reglamento definitions"], ["Internal area to the internal dominant face", "IPMS 2", "Approximated by Gross Area 2, International Comparison Method", "Not directly comparable", "Not a standard Mexican concept"], ["Area in exclusive occupancy (a key, a villa, a tenancy). CP: Interior AC: Sellable / Revenue", "IPMS 3.1 (external measurement) or IPMS 3.2 (internal measurement)", "Addressed by the office and multi-unit residential standards rather than Gross Areas", "Gross Living Area, measured to exterior finished surface, above grade and finished only", "Superficie privativa"], ["Structural walls and columns within the measured area", "Included in IPMS 1, 2 and 3.1; excluded from IPMS 3.2 and 4.2", "Included in all Gross Area methods", "Included in GLA", "Generally included in superficie construida"], ["Interior partitions", "Included except in IPMS 4.2", "Included", "Included in GLA", "Included"], ["Vertical penetrations: stairs, lifts, shafts", "Measured at each level in IPMS 1 and 2; excluded from IPMS 3 exclusive area", "Included at each level in the Construction Method", "Stairway area counts on the level from which it descends; open shafts excluded", "Generally included; confirm with the DRO"], ["Covered unenclosed terrace, loggia or portico attached to the building", "External Floor Area or Sheltered Area; included but stated separately", "Unenclosed area category; the 2024 edition expanded these categories", "Excluded from GLA; reported separately as covered exterior", "Treatment varies; confirm with the DRO whether it counts toward CUS"], ["Uncovered terrace, roof deck or balcony", "External Floor Area where structurally integral and provided with a balustrade; stated separately", "Unenclosed area category", "Excluded from GLA", "Generally excluded from CUS; confirm"], ["Detached casita, pool pavilion or guest suite on the same lot", "Measured as a separate building; report IPMS 1, 2 and 3 for each", "Measured as a separate building", "Excluded from the main dwelling GLA; reported separately and labelled", "Separate superficie construida; may form part of the superficie privativa depending on the regime"], ["Garage, carport and covered parking", "Included in IPMS 1 and 2, identified separately", "Included, identified separately", "Excluded from GLA", "Counts toward superficie construida in most cases; confirm"], ["Plant rooms, mechanical and back of house", "Included; classified under the Component Areas framework as technical area", "Included", "Excluded where unfinished", "Included"], ["Common circulation and public corridors", "Included in IPMS 1 and 2; excluded from IPMS 3", "Included", "Not applicable to detached residences", "Area comun, allocated by indiviso"], ["Areas that cannot be legally or practically occupied", "Limited Use Areas: included but identified and stated separately", "No direct equivalent", "Ceiling height under 2.13 m (7 ft) excluded from GLA, with the stated exception", "Confirm with the DRO"]]}, "protocol": ["Every drawing, schedule, report or presentation that states an area shall name the standard, the edition and the variant used, in the title block or directly beneath the figure. An area figure issued without a named standard is not an acceptable deliverable and will be returned.", "Areas are reported in square metres as the primary unit and square feet as the secondary unit, both to the same precision: nearest 0.1 m2 and nearest 1 ft2. Conversion uses 1 m2 = 10.7639 ft2 and is applied once, at the end, to the unrounded figure.", "Area schedules are issued in a machine readable format (.xlsx) in addition to any sheet presentation, with one row per space, carrying: space name, space number, building, level, CP area category and sub-category, a revenue / non-revenue flag, department per USALI, and the area under each mandated standard in separate columns. Guestrooms and residences may be blocked by type (for example, all junior one-bedrooms on a floor), with the unit count per block, so the average area per unit type can be calculated.", "Every reissue of an area schedule carries a delta column against the last issued version and a short note explaining any change greater than 1 per cent at the building level or 2 per cent at the space level.", "The Architect of Record maintains the single controlling area model. No other consultant issues area figures to third parties without routing them through that model.", "Cost per square metre is split by scope. Vertical (building) cost is reported against Total Gross Buildable Area, pool cost against pool shell area, and horizontal (site) cost against the site categories. Shared infrastructure, such as power to site and transformer connections, is broken out on its own line. The boundary between vertical and horizontal cost will be set by the Costa Palmas cost allocation guidebook, to follow.", "Before any residence is released for sale, the Owner's counsel, the Architect of Record and the sales team sign a reconciliation memorandum tying the escritura area, the ANSI Z765 gross living area and the IPMS 3.1 area for each villa type, with the differences explained. Marketing material states which standard the headline figure uses."]}}, "cats": {"REF": {"ipms": ["IPMS: All Buildings (Jan 2023)", "https://ipmsc.org/wp-content/uploads/2023/01/ipms-all-buildings-.pdf"], "boma": ["BOMA Gross Areas Z65.3 (2024)", "https://www.boma.org/BOMA/BOMA-Standards/BOMA_Floor_Measurement_Standards/Gross_Areas.aspx"], "ansi": ["ANSI Z765-2021", "https://www.inspectradar.com/resources/ansi-z765-reference/"], "usali": ["USALI 12th Revised Edition", "https://usali.hftp.org/"], "rbcs": ["Reglamento de Construcciones BCS (2005)", "https://www.loscabos.gob.mx/tramites-servicios/Direccion%20general%20de%20desarrollo%20urbano/01_REGLAMENTO_DE_CONSTRUCCIONES_DE_BCS_(2005).pdf"], "nom245": ["NOM-245-SSA1-2010, pools", "https://dof.gob.mx/normasOficiales/4770/salud/salud.htm"], "poel": ["POEL 2026, Los Cabos", "https://www.loscabos.gob.mx/poel-2026/"]}, "categories": [{"id": "interior-ac", "label": "Interior AC", "swatch": "#F7D9C0", "rollsUp": "building", "what": "Enclosed, air conditioned front of house floor area, reported as three sub-lines: Sellable / Revenue, Circulation and FOH Non-Revenue.", "includes": ["Rooms that can be fully closed by walls, doors or operable glazing and are mechanically cooled", "Internal walls, partitions and columns inside the enclosure", "External walls enclosing it, to their outer face", "Demising walls between units or keys, and walls between sub-lines, split on their centreline", "Walls shared with BOH, split on their centreline"], "excludes": ["Kitchens, stores, offices, staff rooms and plant, even when cooled: report as BOH", "Service lifts and their shafts: report as BOH. Guest lifts are Circulation", "Spaces cooled only by fans or misters, or open on one or more sides: report as Exterior Covered", "Detached structures (a container or pavilion): report on their own line, never in brackets"], "calc": ["Assign every space to Sellable / Revenue, Circulation or FOH Non-Revenue.", "Measure to the outer face of the external walls that enclose it (IPMS 1 basis). Split demising walls, walls between sub-lines and walls shared with BOH on their centreline.", "Where Interior AC meets Exterior Covered, the wall or glazing line belongs to Interior AC, measured to its outer face.", "Sum each sub-line by floor, then report the three sub-lines and their sum. Report m2 first, ft2 second, converting once at the end (1 m2 = 10.7639 ft2).", "Check each building: Interior AC + BOH (INT + EXT) = IPMS 1. Any difference is a measurement error, not a category."], "equiv": {"ipms": "Share of IPMS 1; Interior AC + BOH (INT + EXT) = IPMS 1 per building. Sellable aligns with IPMS 3.1 per unit", "boma": "Included in Gross Area", "cus": "Counts toward superficie construida", "usali": "Department served, e.g. Food and Beverage; Other Operated Departments"}, "refs": ["ipms", "boma", "rbcs", "usali"], "rule": "proposed", "note": "Every square metre of the building footprint, walls included, belongs to exactly one category, so the categories add up to Total Gross Buildable Area. The enclosure test (can it be fully closed?) decides Interior versus Exterior Covered, not the presence of cooling equipment. Teams that need a net interior figure, to the internal dominant face, use IPMS 2, which is reported alongside for every building. It is a reference, not a CP category.", "subs": [{"key": "sell", "label": "Sellable / Revenue", "what": "Space sold or rented as accommodation.", "items": ["Condominium units and branded residences", "Hotel keys: guestrooms and suites, with their bathrooms and closets", "Measured to the centreline of demising walls between units and to the outer face of external walls"]}, {"key": "circ", "label": "Circulation", "what": "Movement space serving units, keys and public areas. Non-revenue, and not occupiable.", "items": ["Corridors and lift lobbies, counted on each floor they serve", "Guest stairs, counted on each floor they serve", "Guest lifts and their shafts, counted on each floor they serve. Service lifts stay in BOH"]}, {"key": "nonrev", "label": "FOH Non-Revenue", "what": "Occupiable front of house that is not sold or rented.", "items": ["Lobbies, reception and arrival", "F&B: dining rooms, bars and private dining (it carries a P&L but is not sold or rented)", "Spa, gym, lounges, amenities, guest restrooms and powder rooms"]}]}, {"id": "exterior-covered", "label": "Exterior Covered", "swatch": "#E2D2C4", "rollsUp": "building", "what": "Roofed floor area that is open on at least one side, reported as two sub-lines: Covered Sellable and Covered Non-Revenue.", "includes": ["Covered terraces, loggias and balconies under a roof or the floor above", "Covered dining decks and outdoor lounges", "Shade structures with a solid roof that are structurally part of the building", "Roofed but unenclosed service areas, such as covered receiving (Covered Non-Revenue, flagged as service)"], "excludes": ["Roof overhang beyond the floor edge: measure the floor, not the roof", "Pergolas, sails and slatted shade with no solid roof: report as Exterior Uncovered", "Any space that can be fully enclosed with operable glazing: report as Interior AC"], "calc": ["Measure from the outer face of the enclosing wall or glazing line to the outer face of the balustrade or upstand, or to the slab edge where there is none.", "Balustrades and upstands are included; the enclosing wall is not (it belongs to Interior AC or BOH).", "Report as IPMS Sheltered Area in its own column. Never merge into Interior AC or a headline figure.", "Assign each covered area to Covered Sellable or Covered Non-Revenue, flag covered service areas, then report both sub-lines and their sum."], "equiv": {"ipms": "Sheltered Area, stated separately", "boma": "Unenclosed area category (2024 edition)", "cus": "Varies; confirm with the DRO whether it counts toward CUS", "usali": "Department served, usually Food and Beverage"}, "refs": ["ipms", "boma", "rbcs"], "rule": "proposed", "note": "On this product type covered exterior area is often 40 to 70 per cent of interior area, which is why it is never folded into a headline figure. Covered Sellable balconies are treated as revenue area, not loss: removing one would require a lower sale price or rate.", "subs": [{"key": "covrev", "label": "Covered Sellable", "what": "Exclusive to a unit or key that is sold or rented.", "items": ["Balconies, loggias and covered terraces of residences, condominium units and keys", "Counts as revenue area in development efficiency"]}, {"key": "covpub", "label": "Covered Non-Revenue", "what": "Shared or operated covered space.", "items": ["Covered F&B terraces and dining decks", "Porticos, arrival canopies, covered amenity decks and cabanas", "Covered receiving and other roofed, unenclosed service areas, flagged as service: in the gross, but not occupiable", "Counts as loss in development efficiency"]}]}, {"id": "boh", "label": "BOH", "swatch": "#F4E4EA", "rollsUp": "building", "what": "Back of house: every enclosed space not used by members or guests, reported as two sub-lines: BOH (INT): Conditioned and BOH (EXT): Unconditioned. Both count in Total Gross Buildable Area.", "includes": ["Kitchens", "Receiving, storage, trash and recycling rooms", "Offices, IT rooms, staff restrooms and staff areas", "Mechanical, electrical and plant rooms; service lifts and their shafts", "External walls enclosing it, to their outer face; walls shared with Interior AC, or between the two sub-lines, split on their centreline"], "excludes": ["Guest restrooms, even when shared with staff: report as Interior AC", "Service corridors that guests use: report as Interior AC", "Guest lifts and their shafts: report as Interior AC: Circulation", "Roofed but unenclosed service areas, such as covered receiving: report as Exterior Covered: Covered Non-Revenue, flagged as service", "Open service yards and equipment pads: report as Exterior Uncovered (site area)", "Pool equipment rooms and balance tanks stay here, not in Pool Area"], "calc": ["Assign every BOH space to BOH (INT), mechanically conditioned, or BOH (EXT), not conditioned. Both must be fully enclosed; the enclosure test decides BOH versus an exterior category.", "Measure both as Interior AC, to the outer face of external walls; split shared walls on their centreline.", "Report BOH (INT) and BOH (EXT) separately, then their sum. Both count in IPMS 1 and Total Gross Buildable Area."], "equiv": {"ipms": "Component Areas: C Technical Services and related; INT and EXT together are the balance of IPMS 1", "boma": "Included in Gross Area", "cus": "Counts toward superficie construida", "usali": "Kitchens: Food and Beverage. Plant, IT, offices: undistributed (confirm with Operator)"}, "refs": ["ipms", "boma", "usali", "rbcs"], "rule": "proposed", "note": "The conditioning test decides INT versus EXT; the enclosure test decides BOH versus an exterior category. USALI 12 is an accounting standard; the department column shows which cost centre the space serves in the proforma.", "subs": [{"key": "bohint", "label": "BOH (INT): Conditioned", "what": "Enclosed and mechanically conditioned.", "items": ["Kitchens, including cold rooms within the kitchen", "Offices, IT rooms, staff rooms and staff restrooms", "Conditioned stores, receiving and laundry"]}, {"key": "bohext", "label": "BOH (EXT): Unconditioned", "what": "Enclosed but not conditioned.", "items": ["Mechanical, electrical and plant rooms; generator and transformer rooms where enclosed", "Pool plant rooms and balance tank rooms", "Unconditioned stores, trash and recycling rooms"]}]}, {"id": "pool", "label": "Pool Area", "swatch": "#D6ECF0", "rollsUp": "pool", "what": "Pools, spas, plunge pools and water features. Grouped with the building categories as vertical scope, but never added to Total Gross Buildable Area.", "includes": ["Pool shell: every pool, spa, plunge pool and water feature, to the outer face of its walls, including walls, structure, wet edges, beach entries and gutters", "Water surface at the design waterline, reported per pool as a second figure"], "excludes": ["Pool decks and surrounds: report as Exterior Uncovered", "Pool plant and balance tanks: report as BOH"], "calc": ["Shell area: measure in plan to the outer face of the pool walls and structure. Use it for cost and cost per m2 comparison.", "Water surface: measure at the design waterline, to the inside face of the pool wall. Use it for NOM-245 and the water balance.", "Report both figures per pool, each on its own line. Neither is added to Total Gross Buildable Area or to any efficiency ratio."], "equiv": {"ipms": "Not measured", "boma": "Not measured", "cus": "Confirm with the DRO", "usali": "Department served"}, "refs": ["nom245"], "rule": "proposed", "note": "Pool Area sits with the building categories because it is vertical, structural scope. That lets consolidated and per-unit pool strategies be compared on cost per m2. It stays out of the gross total."}, {"id": "exterior-uncovered", "label": "Exterior Uncovered", "swatch": "#F8F3D9", "rollsUp": "site", "what": "Open-sky hardscape used by members and guests: decks, terraces, courtyards and pool surrounds.", "includes": ["Pool decks and surrounds (not the water)", "Open terraces, roof decks and balconies with no cover", "Courtyards, paths and beach decks in hard materials", "Pergolas and slatted shade with no solid roof", "Open service yards and equipment pads"], "excludes": ["Pool water surface: report as Pool Area", "Planting beds: report as Landscape Planting", "Vehicle paving: report as Road"], "calc": ["Measure the horizontal surface to its edge, or to the inside face of the balustrade.", "On-grade hardscape is site area. Elevated decks and roof terraces that are structurally integral with the building are also reported as IPMS External Floor Area.", "Do not include in Total Gross Buildable Area."], "equiv": {"ipms": "External Floor Area where structurally integral with a balustrade; otherwise not measured", "boma": "Unenclosed area category where attached to the building", "cus": "Generally excluded from CUS; confirm", "usali": "Department served"}, "refs": ["ipms", "boma", "rbcs"], "rule": "exhibit"}, {"id": "landscape", "label": "Landscape Planting", "swatch": "#BFD7A2", "rollsUp": "site", "what": "Planted softscape: the area that is irrigated or naturalised.", "includes": ["Planting beds, lawns and planters on grade", "Planted roofs and podium planters (report by floor)", "Restored native vegetation inside the project boundary"], "excludes": ["Gravel, decomposed granite and sand: report as Exterior Uncovered", "Pots and loose planters"], "calc": ["Measure the horizontal planted area in plan.", "Split by irrigation type (irrigated, drip, native, none) so the area can feed the site water balance."], "equiv": {"ipms": "Not measured", "boma": "Not measured", "cus": "Open space; check against POEL and PDU open space requirements", "usali": "Not applicable"}, "refs": ["poel", "rbcs"], "rule": "proposed", "note": "The planting palette follows the water balance, not the reverse."}, {"id": "asphalt", "label": "Road", "swatch": "#D9DADB", "rollsUp": "site", "what": "Vehicular paving: access roads, drop-off, parking and service access.", "includes": ["Access roads and drives", "Arrival drop-off and turning areas", "Surface parking and service vehicle access"], "excludes": ["Pedestrian paths: report as Exterior Uncovered", "Service yards: report as Exterior Uncovered"], "calc": ["Measure the horizontal paved area in plan, to the edge of pavement or the back of kerb.", "Report impermeable and permeable paving separately, for stormwater and runoff design."], "equiv": {"ipms": "Not measured", "boma": "Not measured", "cus": "Counts toward site coverage (COS); confirm with the DRO", "usali": "Not applicable"}, "refs": ["rbcs"], "rule": "proposed"}], "totals": {"label": "Total Gross Buildable Area", "definition": "Interior AC (Sellable / Revenue + Circulation + FOH Non-Revenue) + Exterior Covered (Covered Sellable + Covered Non-Revenue) + BOH (INT + EXT), by floor and in total. The categories add up exactly to this figure, because external walls are measured to their outer face and allocated to the category they enclose. Pool Area is grouped with the building categories but is never added. Site areas (Exterior Uncovered, Landscape Planting, Road) are reported separately and are never added to it.", "calc": ["Add the building categories, sub-lines included, for each floor, then sum the floors.", "Check: Total Gross Buildable Area = IPMS 1 + Exterior Covered. Any difference is an error to resolve before issue.", "Report Pool Area and detached structures on their own lines; they are never added to the total."], "rule": "proposed", "refs": ["ipms", "boma", "rbcs"]}, "efficiency": {"label": "Efficiency metrics", "definition": "Three named ratios, read straight from the category sub-lines, so no extra measurement is needed. Development efficiency is the headline for investment and sales; construction efficiency is the design measure. Report all three per building, every time, and never label any of them just “building efficiency”.", "metrics": [{"name": "Development efficiency", "role": "Headline: investment and sales", "formula": "(Interior AC: Sellable + Exterior Covered: Covered Sellable) ÷ Total Gross Buildable Area", "use": "Share of the gross area that is sold or rented. Everything else is loss: Circulation, FOH Non-Revenue, Covered Non-Revenue and BOH (INT and EXT). Balconies count because they carry unit value: removing one would mean a lower price or rate. Past CP practice left them out, which is part of why older efficiency figures read lower, so restate before comparing."}, {"name": "Construction efficiency, enclosed", "role": "Headline: design", "formula": "Occupiable area ÷ IPMS 1, where occupiable = Interior AC: Sellable + FOH Non-Revenue", "use": "Share of the enclosed building that people occupy. Circulation and BOH are left out of the numerator. IPMS 1 = Interior AC + BOH (INT + EXT)."}, {"name": "Construction efficiency, covered", "role": "Report beside the enclosed basis", "formula": "(Occupiable area + Exterior Covered − covered service areas) ÷ Total Gross Buildable Area", "use": "Same ratio with covered terraces counted. Covered service areas, such as covered receiving, stay in the gross but are not occupiable. Never report this instead of the enclosed basis."}, {"name": "Area per key or per seat", "role": "Alongside", "formula": "IPMS 1 (enclosed basis) or Total Gross Buildable Area (covered basis) ÷ keys (lodging) or seats (F&B)", "use": "Benchmark against the operator's brand standards. State the operator's own definition of the denominator in the note."}, {"name": "Net to gross", "role": "Design diagnostic", "formula": "IPMS 2 ÷ IPMS 1", "use": "Area lost to walls and structure. Use to compare design options, not as a headline."}], "calc": ["Take the category and sub-line totals for each building from the area summary; never re-measure for efficiency.", "Report development efficiency and both construction bases side by side, to one decimal place as a percentage.", "Classify every space by the category and sub-line rules above before calculating; the Sellable / Circulation / Non-Revenue and Covered Sellable / Covered Non-Revenue lines drive the result.", "Occupiable area = Interior AC: Sellable + FOH Non-Revenue. Circulation (corridors, lift lobbies, guest stairs and guest lifts) is never occupiable.", "Site areas, Pool Area and detached structures are never in any efficiency ratio.", "Reference metrics, such as net to gross and the CP Homes envelope efficiency below, are reported on their own lines and never mixed with the area ratios.", "Where a team measures Interior AC to the internal finish face, it reports the enclosure delta (IPMS 1 − IPMS 2) on its own line so the figures still tie to IPMS 1 and Total Gross Buildable Area.", "CP Homes envelope efficiency (Waller), reference only and not a CP standard: perfect perimeter ÷ actual perimeter, where perfect perimeter = 4 × √(gross interior area). Example: 10,000 ft2 gives a 100 ft edge and a 400 ft perfect perimeter; with a 600 ft actual perimeter, 400 ÷ 600 = 67%. It measures envelope compactness (exterior wall per unit of floor area), not area efficiency. State the area figure used as the input."], "note": "A higher ratio is not better without limit: an undersized BOH fails the operator, and thin public space weakens the product. Read the ratios with the operator's requirements.", "rule": "proposed", "refs": ["ipms", "usali"], "note2": "The 85% efficiency figure currently in circulation is understood to be on the development basis (sellable over gross), not Interior AC over gross. Confirm its derivation before quoting it against this standard."}, "groups": {"building": {"label": "Building area", "tag": "Building area: in gross total"}, "site": {"label": "Site area", "tag": "Site area: not in gross total"}, "pool": {"label": "Pool area", "tag": "Building area: not in gross total"}}}};
+const C = DATA.content, M = DATA.cats;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const INTL_RE = /\b(?:IPMS|BOMA|ANSI|USALI)\s?[A-Za-z]?\d[\w.\/-]*|\bZ65\.\d(?:-\d{4})?|\bZ765-\d{4}/g;
+const MX_RE = /\b(?:NOM|NMX)-[A-Z0-9]+(?:-[A-Z0-9]+)*/g;
+const rich = s => esc(s).replace(MX_RE, m=>`<span class="c">${m}</span>`).replace(INTL_RE, m=>`<span class="c">${m}</span>`).replace(/†/g,'<span class="dag">&dagger;</span>');
+const fmt = n => n.toLocaleString('en-US',{maximumFractionDigits:1});
+/* sub-line swatches, worked example and ratio maths: every figure on the page is computed from these */
+const SUBSW = {sell:'#F2C29B', circ:'#E6DABF', nonrev:'#FBE6D4', bohint:'#F4E4EA', bohext:'#DCC3CE', covrev:'#D9C3AF', covpub:'#EEE6DC', pool:'#D6ECF0'};
+const SUBLBL = {sell:'Interior AC: Sellable / Revenue', circ:'Interior AC: Circulation', nonrev:'Interior AC: FOH Non-Revenue', bohint:'BOH (INT): Conditioned', bohext:'BOH (EXT): Unconditioned', covrev:'Exterior Covered: Covered Sellable', covpub:'Exterior Covered: Covered Non-Revenue', covsvc:'of which covered service (not occupiable)'};
+const WX = {sell:300, circ:40, nonrev:40, bohint:140, bohext:30, covrev:150, covpub:80, covsvc:0};
+const pct = (n,d) => d ? (100*n/d).toFixed(1)+'%' : 'n/a';
+function ratios(a){
+  const g=k=>a[k]||0, occ=g('sell')+g('nonrev'), iac=occ+g('circ'), cov=g('covrev')+g('covpub'), svc=Math.min(g('covsvc'),g('covpub')), ipms1=iac+g('bohint')+g('bohext'), tgba=ipms1+cov;
+  return {iac, occ, cov, svc, ipms1, tgba, devN:g('sell')+g('covrev'), dev:pct(g('sell')+g('covrev'),tgba), enc:pct(occ,ipms1), covdN:occ+cov-svc, covd:pct(occ+cov-svc,tgba)};
+}
+
+document.getElementById('rev').textContent = C.meta.rev.replace(/\s*\(.*\)/,'');
+document.getElementById('issued').textContent = C.meta.issued;
+
+function refLinks(keys){
+  return `<div class="refs"><span class="rl">Read the standard</span>${keys.map(k=>{const [t,u]=M.REF[k];return `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`}).join('')}</div>`;
+}
+function tags(c){
+  const t=[];
+  t.push(`<span class="tag ${c.rollsUp==='building'?'bld':c.rollsUp}">${esc(M.groups[c.rollsUp].tag)}</span>`);
+  t.push(c.rule==='proposed'?'<span class="tag prop">Proposed project standard</span>':'<span class="tag">Per published standard</span>');
+  return `<div class="tags">${t.join('')}</div>`;
+}
+const EQ = [['ipms','IPMS: All Buildings'],['boma','BOMA Gross Areas'],['cus','Superficie construida'],['usali','USALI 12']];
+
+document.getElementById('cats').innerHTML = M.categories.map(c=>`
+  <section class="cat" id="${c.id}" aria-labelledby="h-${c.id}">
+    <div class="cat-head"><span class="sw" style="background:${c.swatch}"></span>
+      <div><h3 id="h-${c.id}">${esc(c.label)}</h3>${tags(c)}</div></div>
+    <p class="cat-what">${rich(c.what)}</p>
+    ${c.subs?`<div class="subs">${c.subs.map(s=>`<div class="sub"><h4><span class="sw" style="background:${SUBSW[s.key]}"></span>${esc(s.label)}</h4><p>${rich(s.what)}</p><ul>${s.items.map(x=>`<li>${rich(x)}</li>`).join('')}</ul></div>`).join('')}</div>`:''}
+    <div class="cols">
+      <div class="col in"><h4>Included</h4><ul>${c.includes.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ul></div>
+      <div class="col out"><h4>Excluded, and where it goes</h4><ul>${c.excludes.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ul></div>
+    </div>
+    <details class="fold"><summary>How it is calculated<span class="fold-i" aria-hidden="true"></span></summary><div class="calc"><ol>${c.calc.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ol></div></details>
+    <details class="fold"><summary>International references<span class="fold-i" aria-hidden="true"></span></summary><div class="eq">${EQ.map(([k,n])=>`<div><b>${n}</b>${rich(c.equiv[k])}</div>`).join('')}</div><div class="cat-foot">${refLinks(c.refs)}</div></details>
+    ${c.note?`<div class="cat-foot"><p class="note"><b>Note.</b> ${rich(c.note)}</p></div>`:''}
+  </section>`).join('');
+
+const T = M.totals;
+document.getElementById('totalCard').innerHTML = `
+  <section class="cat" style="margin-top:14px">
+    <div class="cat-head"><span class="sw blank"></span><div><h3>${esc(T.label)}</h3><div class="tags"><span class="tag bld">Roll-up of building categories</span><span class="tag prop">Proposed project standard</span></div></div></div>
+    <p class="cat-what">${rich(T.definition)}</p>
+    <details class="fold" style="margin-top:14px"><summary>How it is calculated<span class="fold-i" aria-hidden="true"></span></summary><div class="calc"><ol>${T.calc.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ol></div></details>
+    <details class="fold"><summary>International references<span class="fold-i" aria-hidden="true"></span></summary><div class="cat-foot">${refLinks(T.refs)}</div></details>
+  </section>`;
+
+const E = M.efficiency;
+
+/* efficiency diagram and live calculator */
+(function(){
+  const order = ['sell','circ','nonrev','bohint','bohext','covrev','covpub'];
+  const short = {sell:'Sellable',circ:'Circ.',nonrev:'FOH',bohint:'BOH (INT)',bohext:'BOH (EXT)',covrev:'Cov. sellable',covpub:'Cov. non-rev'};
+  const W = Object.assign({}, WX);
+  const EX = {ipms2:505, seats:0, perim:100, f2f:4, units:[['Type A',2,160],['Type B',2,140],['',0,0]]};
+  const X2 = JSON.parse(JSON.stringify(EX));
+  function draw(){
+    const R = ratios(W), k = R.tgba>0 ? 760/R.tgba : 0, X = {}; let x = 0;
+    order.forEach(id=>{X[id]=[x, x+W[id]*k]; x+=W[id]*k;});
+    const by=62, bh=52;
+    let s = `<svg viewBox="0 0 900 366" role="img" aria-label="Efficiency diagram, with Total Gross Buildable Area shown as a bar spanning all seven sub-lines. Development efficiency: Sellable plus Covered Sellable, divided by Total Gross Buildable Area. Construction efficiency, enclosed: occupiable area (Sellable plus FOH Non-Revenue) divided by IPMS 1. Construction efficiency, covered: occupiable area plus Exterior Covered, less covered service areas, divided by Total Gross Buildable Area.">`;
+    s += `<text class="r-h" x="0" y="14">Worked example, m2</text>`;
+    if(x>0){ s += `<rect x="0" y="24" width="${x}" height="28" fill="var(--surface-2)" stroke="currentColor" stroke-width="1.4"/><text class="r-t" x="8" y="43" style="fill:currentColor">Total Gross Buildable Area</text><text class="r-f" x="${x-8}" y="43" text-anchor="end">${fmt(R.tgba)}</text>`;
+      s += `<path class="r-ln" d="M0 52 V ${by} M${x} 52 V ${by}"/>`; }
+    order.forEach(id=>{const [a,b]=X[id]; if(b-a<=0) return; s+=`<rect class="r-box" x="${a}" y="${by}" width="${b-a}" height="${bh}" fill="${SUBSW[id]}"/>`+(b-a>=36?`<text class="r-t" x="${a+6}" y="${by+22}">${short[id]}</text><text class="r-s" x="${a+6}" y="${by+40}">${fmt(W[id])}</text>`:'');});
+    const rows = [
+      ['Development efficiency','(Sellable + Cov. sellable) ÷ Total Gross Buildable',['sell','covrev'],['sell','covpub'],R.dev],
+      ['Construction efficiency, enclosed','Occupiable (Sellable + FOH Non-Revenue) ÷ IPMS 1',['sell','nonrev'],['sell','bohext'],R.enc],
+      ['Construction efficiency, covered','(Occupiable + Exterior Covered − covered service) ÷ Total Gross Buildable',['sell','nonrev','covrev','covpub'],['sell','covpub'],R.covd]];
+    rows.forEach(([lab,f,num,den,v],i)=>{
+      const ry = 140 + i*74, d0 = X[den[0]][0], d1 = X[den[1]][1];
+      s += `<text class="r-h" x="0" y="${ry}">${lab}<a class="info-a" href="#efficiency-calcs" data-m="${i}" role="button" aria-haspopup="dialog" aria-label="More info: ${lab}"><tspan dx="12">ⓘ MORE INFO</tspan></a></text><text class="r-f" x="0" y="${ry+17}">${f}</text>`;
+      if(d1>d0) s += `<path class="r-br" d="M${d0+1} ${ry+40} V ${ry+30} H ${d1-1} V ${ry+40}"/>`;
+      s += num.map(id=>X[id][1]-X[id][0]>0?`<rect class="r-box" x="${X[id][0]}" y="${ry+44}" width="${X[id][1]-X[id][0]}" height="12" fill="${SUBSW[id]}"/>`:'').join('');
+      s += `<text class="r-tt" x="790" y="${ry+50}">${v}</text>`;
+    });
+    s += `</svg>`;
+    document.getElementById('effSvg').innerHTML = s;
+    const set = (id,v) => { const el=document.getElementById(id); if(el) el.textContent=v; };
+    set('wk-iac',fmt(R.iac)); set('wk-ipms1',fmt(R.ipms1)); set('wk-cov',fmt(R.cov)); set('wk-tgba',fmt(R.tgba));
+    set('wk-occ',fmt(R.occ));
+    set('wk-devf',`(${fmt(W.sell)} + ${fmt(W.covrev)}) ÷ ${fmt(R.tgba)}`); set('wk-dev',R.dev);
+    set('wk-encf',`${fmt(R.occ)} ÷ ${fmt(R.ipms1)}`); set('wk-enc',R.enc);
+    set('wk-covf',`(${fmt(R.occ)} + ${fmt(R.cov)} − ${fmt(R.svc)}) ÷ ${fmt(R.tgba)}`); set('wk-covd',R.covd);
+    set('wk-sum',`Development ${R.dev} · Construction, enclosed ${R.enc} · Construction, covered ${R.covd}`);
+    set('wk-k1',R.dev); set('wk-k2',R.enc); set('wk-k3',R.covd);
+    set('wk-delta', X2.ipms2>0 ? fmt(+(R.ipms1-X2.ipms2).toFixed(1)) : 'n/a'); set('wk-n2gf', `${fmt(X2.ipms2)} ÷ ${fmt(R.ipms1)}`); set('wk-n2g', X2.ipms2>0 ? pct(X2.ipms2,R.ipms1) : 'n/a');
+    const per = (a,n) => n>0 ? fmt(+(a/n).toFixed(1)) : 'n/a';
+    let uN=0, uA=0;
+    X2.units.forEach((u,i)=>{ uN+=u[1]; uA+=u[2]; set('wk-uavg'+i, per(u[2],u[1])); });
+    set('wk-un', fmt(uN)); set('wk-ua', fmt(+uA.toFixed(1)));
+    const diff = +(uA - W.sell).toFixed(1);
+    const ck = document.getElementById('wk-uck'); if(ck){ ck.textContent = diff===0 ? 'Matches Sellable' : `Differs from Sellable by ${fmt(diff)} m2`; ck.className = 'num' + (diff===0 ? '' : ' wk-warn'); }
+    set('wk-pk1', per(R.ipms1,uN)); set('wk-pk2', per(R.tgba,uN));
+    set('wk-ps1', per(R.ipms1,X2.seats)); set('wk-ps2', per(R.tgba,X2.seats));
+    const pp = R.ipms1>0 ? 4*Math.sqrt(R.ipms1) : 0, fa = X2.perim*X2.f2f;
+    set('wk-ipms1b', fmt(R.ipms1)); set('wk-pp', pp ? fmt(+pp.toFixed(1)) : 'n/a');
+    set('wk-wal', (pp && X2.perim>0) ? pct(pp,X2.perim) : 'n/a');
+    set('wk-fa', fa>0 ? fmt(+fa.toFixed(1)) : 'n/a'); set('wk-ff', (fa>0 && R.ipms1>0) ? (fa/R.ipms1).toFixed(2) : 'n/a');
+  }
+  const inp = id => `<tr><td><label for="wk-in-${id}">${SUBSW[id]?`<span class="sw" style="background:${SUBSW[id]};width:14px;height:11px;margin-right:6px;vertical-align:-1px"></span>`:'<span style="display:inline-block;width:20px"></span>'}${esc(SUBLBL[id])}</label></td><td class="num"><input class="wk-in" id="wk-in-${id}" data-k="${id}" type="number" inputmode="decimal" min="0" step="any" value="${WX[id]}"></td></tr>`;
+  const out = (l,id,cls='tot') => `<tr class="${cls}"><td>${l}</td><td class="num" id="${id}"></td></tr>`;
+  const ratio = (l,fid,vid,cls='') => `<tr class="${cls}"><td>${l}: <span id="${fid}"></span></td><td class="num" id="${vid}"></td></tr>`;
+  document.getElementById('workedTbl').innerHTML = `<thead><tr><th>Line</th><th class="num">m2</th></tr></thead><tbody>`
+    + inp('sell') + inp('circ') + inp('nonrev') + out('= Interior AC','wk-iac')
+    + out('Occupiable area (Sellable + FOH Non-Revenue)','wk-occ','')
+    + inp('bohint') + inp('bohext') + out('= IPMS 1 (Interior AC + BOH (INT) + BOH (EXT))','wk-ipms1')
+    + inp('covrev') + inp('covpub') + inp('covsvc') + out('= Exterior Covered','wk-cov')
+    + out('= Total Gross Buildable Area (IPMS 1 + Exterior Covered)','wk-tgba')
+    + ratio('Development efficiency','wk-devf','wk-dev','tot hl')
+    + ratio('Construction efficiency, enclosed','wk-encf','wk-enc')
+    + ratio('Construction efficiency, covered','wk-covf','wk-covd')
+    + `<tr><td><label for="wk-in-ipms2">IPMS 2 (net interior, to the finish face)</label></td><td class="num"><input class="wk-x" id="wk-in-ipms2" data-x="ipms2" type="number" inputmode="decimal" min="0" step="any" value="${EX.ipms2}"></td></tr>`
+    + out('= Enclosure delta (IPMS 1 − IPMS 2)','wk-delta')
+    + ratio('Net to gross','wk-n2gf','wk-n2g')
+    + `</tbody>`;
+  const num = (attrs,v) => `<input class="wk-x" type="number" inputmode="decimal" min="0" step="any" ${attrs} value="${v}">`;
+  document.getElementById('unitTbl').innerHTML = `<thead><tr><th>Unit type</th><th class="num">Units</th><th class="num">Sellable m2 in block</th><th class="num">Average m2 per unit</th></tr></thead><tbody>`
+    + EX.units.map((u,i)=>`<tr><td><input class="wk-txt" type="text" aria-label="Unit type ${i+1} name" placeholder="Unit type" value="${esc(u[0])}"></td><td class="num">${num(`aria-label="Units, row ${i+1}" data-u="${i}" data-c="1"`,u[1])}</td><td class="num">${num(`aria-label="Sellable m2, row ${i+1}" data-u="${i}" data-c="2"`,u[2])}</td><td class="num" id="wk-uavg${i}"></td></tr>`).join('')
+    + `<tr class="tot"><td>Total units and blocked Sellable area</td><td class="num" id="wk-un"></td><td class="num" id="wk-ua"></td><td class="num" id="wk-uck"></td></tr>`
+    + `<tr><td>Area per unit or key: IPMS 1 ÷ units (enclosed basis)</td><td></td><td></td><td class="num" id="wk-pk1"></td></tr>`
+    + `<tr><td>Area per unit or key: Total Gross Buildable Area ÷ units (covered basis)</td><td></td><td></td><td class="num" id="wk-pk2"></td></tr>`
+    + `<tr><td><label for="wk-in-seats">F&amp;B seats</label></td><td class="num">${num('id="wk-in-seats" data-x="seats"',EX.seats)}</td><td></td><td></td></tr>`
+    + `<tr><td>Area per seat: IPMS 1 ÷ seats (enclosed basis)</td><td></td><td></td><td class="num" id="wk-ps1"></td></tr>`
+    + `<tr><td>Area per seat: Total Gross Buildable Area ÷ seats (covered basis)</td><td></td><td></td><td class="num" id="wk-ps2"></td></tr>`
+    + `</tbody>`;
+  document.getElementById('envTbl').innerHTML = `<thead><tr><th>Line (one floor)</th><th class="num">Value</th></tr></thead><tbody>`
+    + `<tr><td><label for="wk-in-perim">Envelope perimeter, m</label></td><td class="num">${num('id="wk-in-perim" data-x="perim"',EX.perim)}</td></tr>`
+    + `<tr><td><label for="wk-in-f2f">Floor-to-floor height, m</label></td><td class="num">${num('id="wk-in-f2f" data-x="f2f"',EX.f2f)}</td></tr>`
+    + `<tr><td>IPMS 1 of the floor, m2 (from the calculator)</td><td class="num" id="wk-ipms1b"></td></tr>`
+    + `<tr class="tot"><td>= Gross facade area, m2 (perimeter × floor-to-floor)</td><td class="num" id="wk-fa"></td></tr>`
+    + `<tr><td>Facade to floor ratio (gross facade area ÷ IPMS 1)</td><td class="num" id="wk-ff"></td></tr>`
+    + `<tr><td>Perfect perimeter, m (4 × √IPMS 1)</td><td class="num" id="wk-pp"></td></tr>`
+    + `<tr><td>Waller envelope efficiency (perfect ÷ actual perimeter; reference only)</td><td class="num" id="wk-wal"></td></tr>`
+    + `</tbody>`;
+  const val = el => { const v=parseFloat(el.value); return isFinite(v)&&v>0 ? v : 0; };
+  document.querySelectorAll('.wk-x').forEach(el=>el.addEventListener('input',()=>{
+    if(el.dataset.x) X2[el.dataset.x] = val(el); else X2.units[+el.dataset.u][+el.dataset.c] = val(el);
+    draw();
+  }));
+  document.querySelectorAll('.wk-in').forEach(el=>el.addEventListener('input',()=>{
+    const v = parseFloat(el.value); W[el.dataset.k] = isFinite(v) && v>0 ? v : 0; draw();
+  }));
+  document.getElementById('wkReset').addEventListener('click',()=>{
+    Object.assign(W, WX); document.querySelectorAll('.wk-in').forEach(el=>{el.value = WX[el.dataset.k];});
+    Object.assign(X2, JSON.parse(JSON.stringify(EX)));
+    document.querySelectorAll('.wk-x').forEach(el=>{ el.value = el.dataset.x ? EX[el.dataset.x] : EX.units[+el.dataset.u][+el.dataset.c]; });
+    document.querySelectorAll('#unitTbl .wk-txt').forEach((el,i)=>{ el.value = EX.units[i][0]; });
+    draw();
+  });
+  draw();
+})();
+
+/* Rev. 2 reference tables */
+(function(){
+  const GL = [
+    ['Total Gross Buildable Area','Gross; gross covered area; GBA','Interior AC + Exterior Covered + BOH (INT + EXT)'],
+    ['IPMS 1','Gross enclosed; gross to outside face','Interior AC + BOH (INT + EXT), to the outer face of external walls'],
+    ['IPMS 2','Net interior; interior to finish face','To the internal dominant face; reference only'],
+    ['Enclosure delta','Exterior enclosure; wall area','IPMS 1 − IPMS 2'],
+    ['BOH (INT): Conditioned','Back of house; service','Enclosed, conditioned back of house; in the gross'],
+    ['BOH (EXT): Unconditioned','Plant; unconditioned BOH','Enclosed back of house that is not conditioned; in the gross. Not the Rev. 1 meaning (exterior service areas)'],
+    ['Interior AC: Sellable / Revenue','Sellable; rentable; revenue area','Space sold or rented as accommodation'],
+    ['Interior AC: Circulation','Core; corridors; vertical circulation','Corridors, lift lobbies, guest stairs and guest lifts; non-revenue and not occupiable'],
+    ['Interior AC: FOH Non-Revenue','Public area; amenity; loss','Occupiable front of house not sold or rented, including F&B'],
+    ['Occupiable area','Usable area; FOH plus sellable','Interior AC: Sellable + FOH Non-Revenue'],
+    ['Exterior Covered: Covered Sellable','Revenue-tied (Rev. 1 and 2); balconies','Covered area exclusive to a unit or key that is sold or rented'],
+    ['Exterior Covered: Covered Non-Revenue','Public (Rev. 1 and 2); covered public','Shared, operated or service covered area; service flagged and not occupiable'],
+    ['Development efficiency','Revenue efficiency; sellable efficiency','(Sellable + Covered Sellable) ÷ Total Gross Buildable Area'],
+    ['Construction efficiency, enclosed','Architecture efficiency; occupiable to gross','Occupiable area ÷ IPMS 1'],
+    ['Construction efficiency, covered','Covered efficiency','(Occupiable area + Exterior Covered − covered service) ÷ Total Gross Buildable Area'],
+    ['Building area (vertical scope)','Vertical; building','Building categories and Pool Area'],
+    ['Site area (horizontal scope)','Horizontal; site; sitework','Exterior Uncovered, Landscape Planting, Road'],
+  ];
+  document.getElementById('glossTbl').innerHTML = `<thead><tr><th>Use this name</th><th>Also called</th><th>Means</th></tr></thead><tbody>${GL.map(r=>`<tr>${r.map(x=>`<td>${rich(x)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+  const CHK = [
+    '<b>Template.</b> Issued on the Costa Palmas area schedule template (OneDrive link under Reference), as .xlsx, with the summary, room schedule, seat count, efficiency and checks tabs.',
+    '<b>One row per space</b>, with space name, number, building, level, CP category and sub-line, revenue or non-revenue flag, and USALI department.',
+    '<b>Units blocked by type</b>, with the unit count per block, so the average area per unit type can be calculated. Seat counts for every F&amp;B outlet.',
+    '<b>Per building:</b> Interior AC (Sellable, Circulation and FOH Non-Revenue), BOH (both sub-lines), Exterior Covered (Covered Sellable and Covered Non-Revenue, with covered service flagged), Total Gross Buildable Area, IPMS 1, IPMS 2 and the enclosure delta.',
+    '<b>Checks tab passes:</b> Interior AC + BOH (INT + EXT) = IPMS 1, and Total Gross Buildable Area = IPMS 1 + Exterior Covered.',
+    '<b>Kept apart:</b> detached structures, pool shell and water surface per pool, and each site category on its own line.',
+    '<b>Other metrics per floor:</b> envelope perimeter to the outer face of external walls, and floor-to-floor height, top of slab to top of slab.',
+    '<b>Efficiency:</b> development efficiency and both construction efficiency bases, side by side, to one decimal place.',
+    '<b>Labelled:</b> standard, edition and variant named for every figure; m2 first, ft2 second, converted once.',
+    '<b>Delta column</b> against the last issue, with a note for any change over 1 per cent per building or 2 per cent per space.',
+  ];
+  document.getElementById('chkList').innerHTML = CHK.map(x=>`<li><span>${x}</span></li>`).join('');
+})();
+
+/* typology examples */
+(function(){
+  const TYP = [
+    {name:'Branded Home', kind:'CP Branded Home: Main House + 2 casitas', head:'dev', a:{sell:512.24,circ:0,nonrev:0,bohint:0,bohext:96.24,covrev:89.04,covpub:0,covsvc:0}, pool:{shell:120.6,water:104.1}, site:{unc:293.7,lp:1377.0},
+     waller:{lbl:'Main House', area:391.1, perim:109.9}, img:'branded-home-area-plan.png', imgAlt:'Area plan of the CP Branded Home coloured by Costa Palmas area category: Main House, two casitas, pool, terraces, entry, arrival and lot landscape', imgCap:'Area plan, CP Branded Home Rev. 1, colours per the Lists tab swatches.', lbCap:'CP Branded Home area plan, Rev. 1.', tagx:'Example: CP Branded Home area schedule, Rev. 1 (16 Oct 2026)',
+     note:'Figures from the CP Branded Home area schedule, Rev. 1: Main House 4,209.3 ft², Casita 1 651.9 ft² and Casita 2 652.5 ft² of Interior AC: Sellable; MEP building, Casita 1 MEP and garage as BOH (EXT); covered terraces and the covered entry as Covered Sellable. The whole home is sold, so development efficiency is the headline at 86.2%. The detached MEP building is kept in the gross as BOH (EXT) by decision; under Rev. 3 it would be a Detached Structure. The Waller envelope efficiency is shown for the Main House only, because it is computed per building: 391.1 m² IPMS 1 and its 109.9 m (360\'-8") envelope perimeter. Reference for facade cost, not an area ratio.',
+     blocks:[]},
+    {name:'Amenity Building', kind:'Public building: Yacht Club clubhouse and F&B', head:'covd', img:'yacht-club-blocking.png', imgAlt:'Yacht Club blocking diagram coloured by area category: dining, bar and lounges as Interior AC FOH Non-Revenue; kitchen and restrooms BOH (INT); plant and stores BOH (EXT); cabanas and shade structures Exterior Covered; beach terrace, pool deck and gravel Exterior Uncovered; two pools as Pool Area; lawn and planting as Landscape; arrival court and service yard as Road', imgCap:'Yacht Club blocking diagram coloured by area category, not to scale. Zones are read from the concept plan.', lbCap:'Yacht Club blocking diagram.', tagx:'Example: Yacht Club concept area totals (19 Oct 2026)', a:{sell:0,circ:0,nonrev:328.88,bohint:158.86,bohext:132.85,covrev:0,covpub:221.11,covsvc:0}, poolTotal:319.6, site:{unc:1012.6,lp:766.4,road:307.5},
+     note:'Figures from the Yacht Club concept area totals, converted from ft² (1 m² = 10.7639 ft²): Interior AC 3,060 ft² plus the 480 ft² Kid\'s Club, all FOH Non-Revenue (3,540 ft²); BOH (INT) 1,710 ft²; BOH (EXT) 950 + 480 = 1,430 ft²; Exterior Covered 2,380 ft², all Covered Non-Revenue with no covered service; Pool Area 3,440 ft²; Exterior Uncovered 10,900 ft²; Landscape Planting 8,250 ft²; Road 3,310 ft². IPMS 1 is 6,680 ft² and Total Gross Buildable Area 9,060 ft². The totals do not split out Circulation, so corridors sit in FOH Non-Revenue until the area schedule does. The Kid\'s Club is counted in the gross by decision; if it is detached, Rev. 3 would report it as a Detached Structure. Nothing is sold or rented as accommodation, so development efficiency is 0% and not meaningful; construction efficiency, covered basis, is the headline, with area per seat.',
+     blocks:[['bohint',20,20,110,140,'Kitchen, BOH'],['circ',130,20,40,140,'Circ.'],['nonrev',170,20,170,140,'Dining, bar, lobby'],['covpub',20,160,320,44,'Covered terrace, receiving']]},
+    {name:'Hotel', kind:'Hotel: Casa Blake Phase 2, typical guestroom floor shown', head:'dev', a:{sell:3600,circ:550,nonrev:450,bohint:900,bohext:100,covrev:800,covpub:400,covsvc:0},
+     note:'Keys and their balconies are revenue area. Corridors and guest lifts are Circulation; lobby, F&B and spa are FOH Non-Revenue. All of it is loss for development efficiency, even where it carries a P&L. Report area per key beside it. Illustrative until the Casa Blake Phase 2 schedule is in (due from David).',
+     blocks:[['covrev',20,14,320,16,'Balconies'],['sell',20,30,320,56,'Keys'],['circ',20,86,320,20,'Corridor'],['sell',20,106,230,56,'Keys'],['circ',250,106,40,56,'Lift'],['bohext',290,106,50,56,'MEP'],['covrev',20,162,230,16,'Balconies'],['covpub',250,162,90,42,'Canopy']]},
+    {name:'Condo building', kind:'Multi-unit residential: Marina Cove Residences (M13), Type C', head:'dev', img:'marina-cove-m13-level1.png', imgAlt:'Marina Cove Residences M13 Level 1 area plan coloured by area category: Units 3A and 4A as Interior AC Sellable, covered terraces as Covered Sellable, a covered non-revenue entry, BOH (INT) and BOH (EXT) rooms, pool shells, open terraces as Exterior Uncovered and landscape', imgCap:'Marina Cove Resi M13, Level 1 area plan (Units 3A and 4A). The table totals cover all levels of Units 3A-3C and 4A-4C.', lbCap:'Marina Cove Resi M13, Level 1 area plan.', tagx:'Example: Marina Cove Resi M13 area schedule, Rev. 0 (22 Oct 2026)', a:{sell:1705.79,circ:0,nonrev:0,bohint:40.51,bohext:7.43,covrev:298.03,covpub:31.03,covsvc:2.79}, poolTotal:70.4, poolLbl:'Pool shell (not added; water surface not yet measured)', site:{unc:273.6,lp:93.1},
+     note:'Figures from the Marina Cove Resi M13 area schedule, Rev. 0 (22 Oct 2026): M13 MCR Type C upgraded layout, Units 3A-3C and 4A-4C, Levels 1 to 3 plus the roof terrace. Sellable 18,361 ft²; BOH (INT) 436 ft²; BOH (EXT) 80 ft²; Covered Sellable 3,208 ft²; Covered Non-Revenue 334 ft², of which 30 ft² is covered service; IPMS 1 18,877 ft²; Total Gross Buildable Area 22,419 ft². Pool shell 758 ft² (roof terrace and Level 1); Exterior Uncovered 2,945 ft²; Landscape Planting 1,002 ft². The schedule carries no Circulation or FOH Non-Revenue, and almost all area is sold: development efficiency is the headline at 96.2%. Units are measured to the centreline of demising walls and the outer face of external walls. The Architect of Record is still to be confirmed.',
+     blocks:[['sell',20,30,140,120,'Unit A'],['circ',160,30,40,120,'Lift'],['sell',200,30,140,120,'Unit B'],['covrev',20,150,140,34,'Balcony'],['nonrev',160,150,40,34,''],['covrev',200,150,140,34,'Balcony']]}
+  ];
+  const HEAD = {dev:'Development efficiency', covd:'Construction efficiency, covered'};
+  const tabs = TYP.map((t,i)=>`<button type="button" role="tab" id="ttab${i}" aria-controls="tpanel${i}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">${esc(t.name)}</button>`).join('');
+  document.getElementById('typoCards').innerHTML = `<div class="ttabs" role="tablist" aria-label="Typology">${tabs}</div>` + TYP.map((t,i)=>{
+    const R = ratios(t.a);
+    const plan = t.img ? `<button type="button" class="zoomfig" data-src="${t.img}" data-cap="${esc(t.lbCap||'')}" aria-label="Enlarge the ${esc(t.name.toLowerCase())} plan"><img src="${t.img}" alt="${esc(t.imgAlt||'')}" loading="lazy"></button>` : `<svg viewBox="0 0 360 214" role="img" aria-label="Blocking diagram of a ${esc(t.name.toLowerCase())}, coloured by area sub-line">`
+      + t.blocks.map(([id,x,y,w,hh,l])=>`<rect x="${x}" y="${y}" width="${w}" height="${hh}" fill="${SUBSW[id]}" stroke="#1a1a1a" stroke-width="1.2"${id==='pool'?' stroke-dasharray="5 4"':''}/>${l?`<text class="${hh<24?'p-sm':'p-lbl'}" x="${x+6}" y="${y+(hh<24?hh/2+4:20)}">${esc(l)}</text>`:''}`).join('')
+      + `</svg>`;
+    const line = (id) => t.a[id] ? `<tr><td><span class="sw" style="background:${SUBSW[id]}"></span>${esc(SUBLBL[id])}</td><td class="num">${fmt(t.a[id])}</td></tr>` : '';
+    const res = (key,lab,v) => `<tr class="${t.head===key?'tot hl':''}"><td>${lab}${t.head===key?' (headline)':''}</td><td class="num">${v}</td></tr>`;
+    const tbl = `<div class="tscroll" style="margin-top:0"><table><thead><tr><th>Line</th><th class="num">m2</th></tr></thead><tbody>`
+      + ['sell','circ','nonrev','bohint','bohext','covrev','covpub'].map(line).join('')
+      + (t.a.covsvc?`<tr><td style="padding-left:30px">${esc(SUBLBL.covsvc)}</td><td class="num">${fmt(t.a.covsvc)}</td></tr>`:'')
+      + `<tr class="tot"><td>IPMS 1</td><td class="num">${fmt(R.ipms1)}</td></tr><tr class="tot"><td>Total Gross Buildable Area</td><td class="num">${fmt(R.tgba)}</td></tr>`
+      + (t.pool?`<tr><td><span class="sw" style="background:${SUBSW.pool}"></span>Pool shell / water surface (not added)</td><td class="num">${fmt(t.pool.shell)} / ${fmt(t.pool.water)}</td></tr>`:'')
+      + (t.poolTotal?`<tr><td><span class="sw" style="background:${SUBSW.pool}"></span>${esc(t.poolLbl||'Pool Area (not added; shell / water split to follow)')}</td><td class="num">${fmt(t.poolTotal)}</td></tr>`:'')
+      + (t.site?`<tr><td><span class="sw" style="background:#F8F3D9"></span>Exterior Uncovered (site area, not added)</td><td class="num">${fmt(t.site.unc)}</td></tr><tr><td><span class="sw" style="background:#BFD7A2"></span>Landscape Planting (site area, not added)</td><td class="num">${fmt(t.site.lp)}</td></tr>${t.site.road?`<tr><td><span class="sw" style="background:#D9DADB"></span>Road (site area, not added)</td><td class="num">${fmt(t.site.road)}</td></tr>`:''}`:'')
+      + res('dev','Development efficiency', R.devN ? R.dev : R.dev+', not meaningful')
+      + res('enc','Construction efficiency, enclosed', R.enc)
+      + res('covd','Construction efficiency, covered', R.covd)
+      + (t.perim?`<tr><td>CP Homes envelope efficiency (Waller), reference only: 4 × √${fmt(R.ipms1)} = ${(4*Math.sqrt(R.ipms1)).toFixed(1)} m perfect ÷ ${t.perim} m actual perimeter</td><td class="num">${pct(4*Math.sqrt(R.ipms1),t.perim)}</td></tr>`:'')
+      + (t.waller?`<tr><td>CP Homes envelope efficiency (Waller), reference only, ${esc(t.waller.lbl)}: 4 × √${fmt(t.waller.area)} = ${(4*Math.sqrt(t.waller.area)).toFixed(1)} m perfect ÷ ${t.waller.perim} m actual perimeter</td><td class="num">${pct(4*Math.sqrt(t.waller.area),t.waller.perim)}</td></tr>`:'')
+      + `</tbody></table></div>`;
+    return `<section class="cat" role="tabpanel" id="tpanel${i}" aria-labelledby="ttab${i}"${i===0?'':' hidden'}>
+      <div class="cat-head" style="grid-template-columns:minmax(0,1fr)"><div><h3>${esc(t.name)}</h3></div></div>
+      <div class="typo"><div class="plan">${plan}<p>${t.img?esc(t.imgCap)+' Hover to zoom; click to enlarge.':'Blocking diagram, not to scale.'} Headline: ${HEAD[t.head]}.</p></div><div>${tbl}</div></div>
+      <div class="cat-foot"><p class="note"><b>Note.</b> ${rich(t.note)}</p></div>
+    </section>`;
+  }).join('');
+  const btns = [...document.querySelectorAll('.ttabs button')];
+  const show = i => btns.forEach((b,k)=>{ const on = k===i; b.setAttribute('aria-selected', on); b.tabIndex = on?0:-1; document.getElementById('tpanel'+k).hidden = !on; });
+  btns.forEach((b,i)=>{
+    b.addEventListener('click', ()=>show(i));
+    b.addEventListener('keydown', e=>{ const d = e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(d){ const n=(i+d+btns.length)%btns.length; show(n); btns[n].focus(); e.preventDefault(); } });
+  });
+})();
+
+document.getElementById('effCalc').innerHTML = `<h4>How it is calculated</h4><ol>${M.efficiency.calc.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ol>`;
+
+/* more-info pop-ups for the three ratios in the efficiency diagram */
+(function(){
+  const fig = document.getElementById('effSvg').parentElement, pop = document.getElementById('effPop');
+  let opener = null;
+  const close = () => { if(pop.hidden) return; pop.hidden = true; if(opener){ opener.focus(); opener = null; } };
+  function open(a){
+    const m = M.efficiency.metrics[+a.dataset.m];
+    pop.innerHTML = `<button type="button" aria-label="Close">×</button><b class="r">${esc(m.role)}</b><h4 id="effPopH">${esc(m.name)}</h4><span class="f">${esc(m.formula)}</span><p>${rich(m.use)}</p>`;
+    pop.hidden = false;
+    const fr = fig.getBoundingClientRect(), ar = a.getBoundingClientRect();
+    const left = Math.max(12, Math.min(ar.left - fr.left, fr.width - pop.offsetWidth - 12));
+    pop.style.left = left + 'px'; pop.style.top = (ar.bottom - fr.top + 8) + 'px';
+    pop.querySelector('button').addEventListener('click', close);
+    opener = a; pop.querySelector('button').focus();
+  }
+  document.getElementById('effSvg').addEventListener('click', e => { const a = e.target.closest('.info-a'); if(!a) return; e.preventDefault(); open(a); });
+  document.getElementById('effSvg').addEventListener('keydown', e => { const a = e.target.closest('.info-a'); if(a && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); open(a); } });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') close(); });
+  document.addEventListener('click', e => { if(!pop.hidden && !pop.contains(e.target) && !e.target.closest('.info-a')) close(); });
+})();
+
+/* nav */
+const navItem = (id,label,sw) => `<li><a href="#${id}" data-t="${id}">${sw?`<span class="sw" style="background:${sw}"></span>`:'<span class="sw blank"></span>'}<span>${esc(label)}</span></a></li>`;
+document.getElementById('navB').innerHTML = navItem('how-to-use','How to use this page') + M.categories.filter(c=>c.rollsUp==='building'||c.rollsUp==='pool').map(c=>navItem(c.id,c.label,c.swatch)).join('') + navItem('total','Total Gross Buildable')  + navItem('typology','Examples per Typology') + navItem('other-metrics','Other reported metrics');
+document.getElementById('navS').innerHTML = M.categories.filter(c=>c.rollsUp==='site').map(c=>navItem(c.id,c.label,c.swatch)).join('');
+document.getElementById('navR').innerHTML = [['purpose','Standard by purpose'],['mapping','Reconciliation'],['protocol','Reporting protocol'],['checklist','Deliverable checklist'],['glossary','Glossary']].map(([i,l])=>navItem(i,l)).join('')
+  + `<li><a href="https://irongp.sharepoint.com/:f:/s/DESIGNTEAM/IgAXglRwAYlNSqfwBNqxWtxjAT7WfOakYr2Ej921CdwjxB8?e=TyuFmA" target="_blank" rel="noopener"><span class="sw blank"></span><span>Area schedule templates (OneDrive) &#8599;</span></a></li>`;
+
+
+/* roll-up diagram */
+(function(){
+  const g = id => M.categories.find(c=>c.id===id);
+  const B = ['interior-ac','exterior-covered','boh'].map(g), H = M.categories.filter(c=>c.rollsUp==='site'), P = g('pool');
+  const bw=190, bh=46, gap=14, sx=520, sw2=170;
+  const sub = {'interior-ac':'sellable + circ. + non-rev','exterior-covered':'cov. sellable + non-rev','boh':'INT cond. + EXT uncond.','exterior-uncovered':'open hardscape','landscape':'planted area','pool':'shell + water surface','asphalt':'vehicle paving'};
+  const box = (c,x,y,w) => `<rect class="r-box" x="${x}" y="${y}" width="${w}" height="${bh}" fill="${c.swatch}"/><text class="r-t" x="${x+10}" y="${y+20}">${esc(c.label)}</text><text class="r-s" x="${x+10}" y="${y+36}">${sub[c.id]}</text>`;
+  let s = `<svg viewBox="0 0 880 290" role="img" aria-label="Building area, vertical scope: Interior AC, Exterior Covered and BOH add up to Total Gross Buildable Area; Pool Area sits with them but is not added. Site area, horizontal scope: Exterior Uncovered, Landscape Planting and Road, reported separately.">`;
+  s += `<text class="r-h" x="0" y="16">Building area: vertical scope</text>`;
+  B.forEach((c,i)=>{const y=34+i*(bh+gap); s+=`<path class="r-ln" d="M${bw} ${y+bh/2} H ${bw+30} V 129 H ${bw+56}"/>`+box(c,0,y,bw);});
+  s += `<polygon points="${bw+56},123 ${bw+66},129 ${bw+56},135" fill="currentColor"/>`;
+  s += `<rect class="r-tot" x="${bw+70}" y="96" width="200" height="68"/><text class="r-tt" x="${bw+86}" y="124">Total Gross</text><text class="r-tt" x="${bw+86}" y="148">Buildable Area</text>`;
+  s += box(P,0,226,bw) + `<rect class="r-x" x="-0" y="222" width="${bw+4}" height="${bh+8}"/><text class="r-s" style="fill:currentColor" x="${bw+16}" y="253">reported on its own line, never added</text>`;
+  s += `<text class="r-h" x="${sx}" y="16">Site area: horizontal, never added</text>`;
+  s += `<rect class="r-x" x="${sx-8}" y="26" width="${2*sw2+gap+16}" height="${2*(bh+gap)+2}"/>`;
+  H.forEach((c,i)=>{s+=box(c, sx+(i%2)*(sw2+gap), 34+Math.floor(i/2)*(bh+gap), sw2);});
+  s += `</svg>`;
+  document.getElementById('rollupSvg').innerHTML = s;
+})();
+
+/* plan fills from category swatches */
+const sw = id => M.categories.find(c=>c.id===id).swatch;
+[['pc-unc','exterior-uncovered'],['pc-boh1','boh']].forEach(([el,id])=>document.getElementById(el).setAttribute('fill',sw(id)));
+document.getElementById('pc-boh2').setAttribute('fill',SUBSW.bohext);
+[['pc-cov','covpub'],['pc-iac','nonrev'],['pc-door','nonrev']].forEach(([el,k])=>document.getElementById(el).setAttribute('fill',SUBSW[k]));
+
+/* section 5 tables */
+document.getElementById('byPurpose').style.minWidth='1000px';
+document.getElementById('byPurpose').innerHTML = `<thead><tr><th>Purpose</th><th>Mandated standard</th><th>Reported by</th><th>Notes</th><th>How it applies to the CP standard</th></tr></thead><tbody>${C.measurement.byPurpose.map(r=>`<tr>${r.map(x=>`<td>${rich(x)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+document.getElementById('mapTbl').innerHTML = `<thead><tr>${C.measurement.mapping.headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${C.measurement.mapping.rows.map(r=>`<tr>${r.map(x=>`<td>${rich(x)}</td>`).join('')}</tr>`).join('')}</tbody>`;
+document.getElementById('proto').innerHTML = C.measurement.protocol.map(p=>`<li><span>${rich(p)}</span></li>`).join('');
+
+/* active nav */
+const links=[...document.querySelectorAll('nav.side a')];
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.setAttribute('aria-current',String(a.dataset.t===e.target.id)));}})},{rootMargin:'-20% 0px -70% 0px'});
+links.forEach(a=>{const t=document.getElementById(a.dataset.t); if(t) obs.observe(t);});
+</script>
+
+
+<div class="lb" id="planLb" role="dialog" aria-modal="true" aria-label="Area plan, enlarged" hidden>
+  <div class="lb-bar"><span id="lbCap"></span><button type="button" id="lbSize">Full size</button><button type="button" id="lbClose">Close</button></div>
+  <div class="lb-view" id="lbView"><img id="lbImg" alt="CP Branded Home area plan, enlarged"></div>
+</div>
+<script>
+(function(){
+  const lb=document.getElementById('planLb'), view=document.getElementById('lbView'), img=document.getElementById('lbImg'), sz=document.getElementById('lbSize');
+  let opener=null;
+  const setFull=f=>{view.classList.toggle('full',f); img.style.width=f?Math.max(img.naturalWidth||0,1800)+'px':''; sz.textContent=f?'Fit to screen':'Full size';};
+  const open=b=>{opener=b; img.src=b.dataset.src; img.alt=b.querySelector('img').alt; document.getElementById('lbCap').textContent=(b.dataset.cap||'')+' Click the plan to see it at full size.'; setFull(false); lb.hidden=false; document.getElementById('lbClose').focus();};
+  const close=()=>{lb.hidden=true; if(opener){opener.focus(); opener=null;}};
+  document.addEventListener('mousemove',e=>{const b=e.target.closest&&e.target.closest('.zoomfig'); if(!b) return; const r=b.getBoundingClientRect(); b.firstElementChild.style.transformOrigin=`${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`;});
+  document.addEventListener('click',e=>{const b=e.target.closest('.zoomfig'); if(b){open(b);}});
+  img.addEventListener('click',e=>{const f=!view.classList.contains('full'); const rx=e.offsetX/img.clientWidth, ry=e.offsetY/img.clientHeight; setFull(f); if(f){view.scrollLeft=rx*img.clientWidth-view.clientWidth/2; view.scrollTop=ry*img.clientHeight-view.clientHeight/2;}});
+  sz.addEventListener('click',()=>setFull(!view.classList.contains('full')));
+  document.getElementById('lbClose').addEventListener('click',close);
+  lb.addEventListener('click',e=>{if(e.target===lb) close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden) close();});
+})();
+</script>
+
+</body></html>
