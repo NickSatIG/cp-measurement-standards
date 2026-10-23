@@ -8,6 +8,8 @@ Prepared for Irongate. Newest revision first. Each revision is also summarized i
 - **Language toggle:** an English / Español (MX) switch at the top of the page translates the whole page, including category names, the calculator, pop-ups and the footer. The choice is remembered per viewer.
 - **Header subtitle:** now reads "What each area schedule includes and how it is measured."
 - **Category diagram:** each box shows a short description on hover. The efficiency diagram flashes when it redraws from the Efficiency example, and its "How it is calculated" list is now a collapsed dropdown.
+- **Condo building plan:** the Marina Cove Resi M13 Level 1 diagram is replaced with an updated version showing the unit floor plans under the area colours.
+- **Hotel plan:** the schematic blocking diagram on the Hotel tab is replaced with the Casa Blake Phase 2 blocking diagram coloured by area category, with hover zoom and click to enlarge. Its table figures are still illustrative.
 - **Efficiency diagram caption:** the two opening sentences are removed; the caption keeps the key to the bars and the live-update note.
 
 ## Rev. 5, 22 October 2026
