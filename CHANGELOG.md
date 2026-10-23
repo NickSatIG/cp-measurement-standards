@@ -10,7 +10,8 @@ Prepared for Irongate. Newest revision first. Each revision is also summarized i
   - Total Gross Buildable Area moves directly before Efficiency Calculations.
   - "Efficiency by typology" is renamed "Examples per Typology", loses its intro paragraph, and becomes the first Reference section.
   - Other Reported Metrics moves to the end of the Reference section, after the Glossary.
-- **Sidebar:** "How to use this page" and "Total Gross Buildable" sit above the Building area group. Examples per Typology heads the Reference group and Other Reported Metrics closes it.
+- **Sidebar:** a top group, above Building area, lists How to use this page, How the categories add up, Total Gross Buildable Area and Efficiency calculations. Examples per typology heads the Reference group and Other reported metrics closes it. Every sidebar label now matches its heading exactly.
+- **Headings:** every main section uses the same heading level, with category, typology and metric cards one level below. Headings are in sentence case. The duplicate title on the Total Gross Buildable Area card is removed. The efficiency example now sits under the Efficiency calculations heading, ahead of the diagram.
 - **Typology tabs:**
   - "Yacht Club" is renamed "Amenity Building" and "Casa Blake Phase 2" is renamed "Hotel". Each source project is still named in the card.
   - The tag boxes and dashed swatch are removed from each tab heading.

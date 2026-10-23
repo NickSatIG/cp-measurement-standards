@@ -315,13 +315,13 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
   </nav>
 
   <main>
-    <h3 class="subhead" id="how-to-use" style="margin-top:8px; scroll-margin-top:16px">How to use this page</h3>
+    <div class="sec-head" style="margin-top:8px"><h2 id="how-to-use" style="scroll-margin-top:16px">How to use this page</h2></div>
     <p class="intro">Find the category as it appears in the area legend. Each card says what goes in, what goes elsewhere, how to measure it, what the published standards call it, and where to read more. Areas are reported in m² first and ft² second, converted once at the end.</p>
 
 
 
     <section id="rollup">
-      <h3 class="subhead">How the categories add up</h3>
+      <div class="sec-head"><h2>How the categories add up</h2></div>
       <figure class="rollup">
         <div class="scroll" id="rollupSvg"></div>
         <figcaption><b>Vertical and horizontal, never mixed.</b> Only the three building categories, with their sub-lines, sum to Total Gross Buildable Area. Pool Area sits with them as vertical scope but is reported on its own line and never added. Exterior Uncovered, Landscape Planting and Road are site areas, horizontal scope, reported separately and never added to the gross figure.</figcaption>
@@ -366,15 +366,15 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
       <div class="sec-head"><h2>Total Gross Buildable Area</h2></div>
       <div id="totalCard"></div>
     </section>
-      <details class="worked" id="wkDetails">
-        <summary><span class="wk-h">Efficiency Example</span><span class="wk-tog" aria-hidden="true"></span>
+      <div class="sec-head"><h2 id="efficiency-calcs" style="scroll-margin-top:16px">Efficiency calculations</h2></div>
+      <details class="worked" id="wkDetails" style="margin-top:12px">
+        <summary><span class="wk-h">Efficiency example</span><span class="wk-tog" aria-hidden="true"></span>
         <div class="wk-kpis" aria-live="polite"><div class="hl"><span class="wk-big" id="wk-k1"></span><span class="wk-kl">Development efficiency</span></div><div><span class="wk-big" id="wk-k2"></span><span class="wk-kl">Construction efficiency, enclosed</span></div><div><span class="wk-big" id="wk-k3"></span><span class="wk-kl">Construction efficiency, covered</span></div></div></summary>
         <div class="wk-body">
         <p class="intro" style="margin-top:0">Type the sub-line totals from the area schedule into the white cells. The subtotals, the ratios and the diagram above update as you type. Add IPMS 2 to see the enclosure delta and net to gross. The figures loaded are the worked example. <button type="button" id="wkReset" class="wk-reset">Reset to example</button></p>
         <div class="tscroll" style="margin-top:8px"><table id="workedTbl"></table></div>
         </div>
       </details>
-      <h3 class="subhead" id="efficiency-calcs">Efficiency Calculations</h3>
       <figure class="rollup" style="margin-top:8px">
         <div class="scroll" id="effSvg"></div>
         <div class="pop" id="effPop" role="dialog" aria-labelledby="effPopH" hidden></div>
@@ -383,7 +383,7 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
       <div class="calc" id="effCalc" style="border:1px solid var(--rule); border-top:none"></div>
     </section>
 
-    <h3 class="subhead" id="area-categories">Area Categories</h3>
+    <div class="sec-head"><h2 id="area-categories" style="scroll-margin-top:16px">Area categories</h2></div>
     <div id="cats"></div>
 
 
@@ -392,7 +392,7 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
 
 
     <section id="typology">
-      <div class="sec-head"><h2>Examples per Typology</h2></div>
+      <div class="sec-head"><h2>Examples per typology</h2></div>
       <div id="typoCards"></div>
     </section>
 
@@ -426,8 +426,8 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
     </section>
 
     <section id="other-metrics">
-      <div class="sec-head"><h2>Other Reported Metrics</h2></div>
-      <p class="lede">Reported with every area schedule, beside the categories. The calculator cells below are linked to the worked example in Efficiency Calculations, so IPMS 1, Sellable and Total Gross Buildable Area flow through. Numbers loaded are illustrative.</p>
+      <div class="sec-head"><h2>Other reported metrics</h2></div>
+      <p class="lede">Reported with every area schedule, beside the categories. The calculator cells below are linked to the efficiency example in Efficiency calculations, so IPMS 1, Sellable and Total Gross Buildable Area flow through. Numbers loaded are illustrative.</p>
 
       <h3 class="subhead" style="font-size:19px">Unit blocks, keys and seats</h3>
       <p class="intro" style="margin-top:6px">Block the Sellable area by unit type, with the number of units in each block, to get the average area per unit type. Enter seats for F&amp;B outlets. The check line flags any difference between the blocks and the Sellable line in the calculator.</p>
@@ -450,7 +450,7 @@ footer{border-top:1px solid var(--rule); margin-top:40px; padding-block:22px 10p
       <div class="tscroll"><table id="envTbl"></table></div>
     </section>
 
-    <footer><p><b>Change log:</b> every revision is summarized in <a href="CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG.md</a>, published with this page.</p><p><b>Rev. 5, 22 October 2026.</b> Amenity Building (Yacht Club) and Condo building (Marina Cove Resi M13) typologies now use project plans and area totals; Yacht Club renamed Amenity Building and Casa Blake Phase 2 renamed Hotel. Screen typography changed for legibility to Source Serif 4, IBM Plex Sans and IBM Plex Mono, deviating from the CP brand faces. Page reorganised: How to use this page cut to one paragraph; the outlet plan moved into How the categories add up; Total Gross Buildable Area placed before Efficiency Calculations; Efficiency by typology renamed Examples per Typology and moved to the start of Reference; Other Reported Metrics moved after the Glossary; sidebar regrouped to match.</p><p><b>Rev. 4, 16 October 2026.</b> Branded Home typology now uses the CP Branded Home area plan (area schedule Rev. 1) and its figures, with hover zoom and click to enlarge; site-area lines added to its table; Waller envelope efficiency computed per building (Main House). Figures display to one decimal place. The calculator is renamed Efficiency Example, with the three headline ratios visible while collapsed. The Efficiency metrics section is removed: the ratio definitions moved to More info pop-ups, and CP Homes envelope efficiency became step 8 of How it is calculated. On every category card, How it is calculated and International references are collapsed sections. A How to use this page link was added to the side nav.</p><p><b>Rev. 3, 15 October 2026.</b> Exterior Covered sub-lines renamed Covered Sellable and Covered Non-Revenue (Rev. 1 and 2: Revenue-tied and Public). Interior AC gains a third sub-line, Circulation: corridors, lift lobbies, guest stairs and guest lifts, which move from BOH; service lifts stay in BOH. Construction efficiency now uses occupiable area (Sellable + FOH Non-Revenue) as its numerator, over IPMS 1 for the enclosed basis and Total Gross Buildable Area for the covered basis; covered service areas stay in the gross but are not occupiable. Development efficiency is unchanged, with a note that balconies count. Gross confirmed as the controlling figure, with net derived from it. Calculator made collapsible; Open items removed; audience stated; typology examples titled for Gulf Villa, Yacht Club, Casa Blake Phase 2 and a condo building, still illustrative.</p><p><b>Rev. 2, 15 October 2026.</b> Added: a glossary of the names each figure goes by; the enclosure delta (IPMS 1 − IPMS 2) as a reconciling line for teams that measure Interior AC to the finish face, in the efficiency metrics and the calculator; an Other Reported Metrics section after the area categories, with unit blocks, keys and seats, envelope perimeter and floor-to-floor heights, all linked to the calculator; an open items table; and an area schedule deliverable checklist. BOH split into two sub-lines, BOH (INT): Conditioned and BOH (EXT): Unconditioned, both enclosed and both counted in Total Gross Buildable Area; this replaces the Rev. 1 meaning of BOH (EXT). Roofed but unenclosed service areas moved to Exterior Covered: Public, and open service yards and pads to Exterior Uncovered. No ratio definition changed, and Rev. 1 is kept so it can be restored.</p><p><b>Rev. 1, 14 October 2026.</b> Interior AC and Exterior Covered split into revenue and non-revenue sub-lines. Pool Area moved under Building Area, outside the gross total, and measured to the pool shell as well as the water surface. Efficiency rewritten as development and construction efficiency, with a worked example and typology examples; Waller envelope efficiency added for reference. Vertical and horizontal scope defined. CP column added to the standard-by-purpose table. Reporting protocol updated for sub-categories, unit blocks and cost split.</p><p>Prepared for Irongate. Rules marked <b>Proposed project standard</b> go beyond the published standards and take effect once ratified by Irongate. Mexican legal positions require confirmation by each project&rsquo;s Mexican counsel and the Director Responsable de Obra. Paid standards link to the publisher&rsquo;s page.</p></footer>
+    <footer><p><b>Change log:</b> every revision is summarized in <a href="CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG.md</a>, published with this page.</p><p><b>Rev. 5, 22 October 2026.</b> Amenity Building (Yacht Club) and Condo building (Marina Cove Resi M13) typologies now use project plans and area totals; Yacht Club renamed Amenity Building and Casa Blake Phase 2 renamed Hotel. Screen typography changed for legibility to Source Serif 4, IBM Plex Sans and IBM Plex Mono, deviating from the CP brand faces. Page reorganised: How to use this page cut to one paragraph; the outlet plan moved into How the categories add up; Total Gross Buildable Area placed before Efficiency Calculations; Efficiency by typology renamed Examples per Typology and moved to the start of Reference; Other Reported Metrics moved after the Glossary; sidebar regrouped to match, with labels matching the headings; headings set to one level and sentence case.</p><p><b>Rev. 4, 16 October 2026.</b> Branded Home typology now uses the CP Branded Home area plan (area schedule Rev. 1) and its figures, with hover zoom and click to enlarge; site-area lines added to its table; Waller envelope efficiency computed per building (Main House). Figures display to one decimal place. The calculator is renamed Efficiency Example, with the three headline ratios visible while collapsed. The Efficiency metrics section is removed: the ratio definitions moved to More info pop-ups, and CP Homes envelope efficiency became step 8 of How it is calculated. On every category card, How it is calculated and International references are collapsed sections. A How to use this page link was added to the side nav.</p><p><b>Rev. 3, 15 October 2026.</b> Exterior Covered sub-lines renamed Covered Sellable and Covered Non-Revenue (Rev. 1 and 2: Revenue-tied and Public). Interior AC gains a third sub-line, Circulation: corridors, lift lobbies, guest stairs and guest lifts, which move from BOH; service lifts stay in BOH. Construction efficiency now uses occupiable area (Sellable + FOH Non-Revenue) as its numerator, over IPMS 1 for the enclosed basis and Total Gross Buildable Area for the covered basis; covered service areas stay in the gross but are not occupiable. Development efficiency is unchanged, with a note that balconies count. Gross confirmed as the controlling figure, with net derived from it. Calculator made collapsible; Open items removed; audience stated; typology examples titled for Gulf Villa, Yacht Club, Casa Blake Phase 2 and a condo building, still illustrative.</p><p><b>Rev. 2, 15 October 2026.</b> Added: a glossary of the names each figure goes by; the enclosure delta (IPMS 1 − IPMS 2) as a reconciling line for teams that measure Interior AC to the finish face, in the efficiency metrics and the calculator; an Other Reported Metrics section after the area categories, with unit blocks, keys and seats, envelope perimeter and floor-to-floor heights, all linked to the calculator; an open items table; and an area schedule deliverable checklist. BOH split into two sub-lines, BOH (INT): Conditioned and BOH (EXT): Unconditioned, both enclosed and both counted in Total Gross Buildable Area; this replaces the Rev. 1 meaning of BOH (EXT). Roofed but unenclosed service areas moved to Exterior Covered: Public, and open service yards and pads to Exterior Uncovered. No ratio definition changed, and Rev. 1 is kept so it can be restored.</p><p><b>Rev. 1, 14 October 2026.</b> Interior AC and Exterior Covered split into revenue and non-revenue sub-lines. Pool Area moved under Building Area, outside the gross total, and measured to the pool shell as well as the water surface. Efficiency rewritten as development and construction efficiency, with a worked example and typology examples; Waller envelope efficiency added for reference. Vertical and horizontal scope defined. CP column added to the standard-by-purpose table. Reporting protocol updated for sub-categories, unit blocks and cost split.</p><p>Prepared for Irongate. Rules marked <b>Proposed project standard</b> go beyond the published standards and take effect once ratified by Irongate. Mexican legal positions require confirmation by each project&rsquo;s Mexican counsel and the Director Responsable de Obra. Paid standards link to the publisher&rsquo;s page.</p></footer>
   </main>
 </div>
 
@@ -504,7 +504,7 @@ document.getElementById('cats').innerHTML = M.categories.map(c=>`
 const T = M.totals;
 document.getElementById('totalCard').innerHTML = `
   <section class="cat" style="margin-top:14px">
-    <div class="cat-head"><span class="sw blank"></span><div><h3>${esc(T.label)}</h3><div class="tags"><span class="tag bld">Roll-up of building categories</span><span class="tag prop">Proposed project standard</span></div></div></div>
+    <div class="cat-head" style="grid-template-columns:minmax(0,1fr)"><div><div class="tags" style="margin-top:0"><span class="tag bld">Roll-up of building categories</span><span class="tag prop">Proposed project standard</span></div></div></div>
     <p class="cat-what">${rich(T.definition)}</p>
     <details class="fold" style="margin-top:14px"><summary>How it is calculated<span class="fold-i" aria-hidden="true"></span></summary><div class="calc"><ol>${T.calc.map(x=>`<li><span>${rich(x)}</span></li>`).join('')}</ol></div></details>
     <details class="fold"><summary>International references<span class="fold-i" aria-hidden="true"></span></summary><div class="cat-foot">${refLinks(T.refs)}</div></details>
@@ -731,10 +731,10 @@ document.getElementById('effCalc').innerHTML = `<h4>How it is calculated</h4><ol
 
 /* nav */
 const navItem = (id,label,sw) => `<li><a href="#${id}" data-t="${id}">${sw?`<span class="sw" style="background:${sw}"></span>`:'<span class="sw blank"></span>'}<span>${esc(label)}</span></a></li>`;
-document.getElementById('navTop').innerHTML = navItem('how-to-use','How to use this page') + navItem('total','Total Gross Buildable');
+document.getElementById('navTop').innerHTML = navItem('how-to-use','How to use this page') + navItem('rollup','How the categories add up') + navItem('total','Total Gross Buildable Area') + navItem('efficiency-calcs','Efficiency calculations');
 document.getElementById('navB').innerHTML = M.categories.filter(c=>c.rollsUp==='building'||c.rollsUp==='pool').map(c=>navItem(c.id,c.label,c.swatch)).join('');
 document.getElementById('navS').innerHTML = M.categories.filter(c=>c.rollsUp==='site').map(c=>navItem(c.id,c.label,c.swatch)).join('');
-document.getElementById('navR').innerHTML = navItem('typology','Examples per Typology') + [['purpose','Standard by purpose'],['mapping','Reconciliation'],['protocol','Reporting protocol'],['checklist','Deliverable checklist'],['glossary','Glossary'],['other-metrics','Other reported metrics']].map(([i,l])=>navItem(i,l)).join('')
+document.getElementById('navR').innerHTML = navItem('typology','Examples per typology') + [['purpose','Mandated standard by purpose'],['mapping','Reconciliation between standards'],['protocol','Reporting protocol'],['checklist','Area schedule deliverable checklist'],['glossary','Glossary'],['other-metrics','Other reported metrics']].map(([i,l])=>navItem(i,l)).join('')
   + `<li><a href="https://irongp.sharepoint.com/:f:/s/DESIGNTEAM/IgAXglRwAYlNSqfwBNqxWtxjAT7WfOakYr2Ej921CdwjxB8?e=TyuFmA" target="_blank" rel="noopener"><span class="sw blank"></span><span>Area schedule templates (OneDrive) &#8599;</span></a></li>`;
 
 
