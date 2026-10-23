@@ -2,6 +2,31 @@
 
 Prepared for Irongate. Newest revision first. Each revision is also summarized in the page footer.
 
+## Rev. 5, 22 October 2026
+
+- **Page layout:**
+  - "How to use this page" is cut to one paragraph, including the units sentence (m² first, ft² second, converted once at the end). The bullets on figure labelling, the controlling model, never merging exterior area, vertical and horizontal scope, gross controls with the IPMS 2 formula, and audience are removed.
+  - The F&B outlet plan moves into "How the categories add up". The separate "One outlet, split by category" section is removed, and the "Open terrace is site area" note is dropped from the plan's legend.
+  - Total Gross Buildable Area moves directly before Efficiency Calculations.
+  - "Efficiency by typology" is renamed "Examples per Typology", loses its intro paragraph, and becomes the first Reference section.
+  - Other Reported Metrics moves to the end of the Reference section, after the Glossary.
+- **Sidebar:** "How to use this page" and "Total Gross Buildable" sit above the Building area group. Examples per Typology heads the Reference group and Other Reported Metrics closes it.
+- **Typology tabs:**
+  - "Yacht Club" is renamed "Amenity Building" and "Casa Blake Phase 2" is renamed "Hotel". Each source project is still named in the card.
+  - The tag boxes and dashed swatch are removed from each tab heading.
+- **Amenity Building typology (Yacht Club):** the schematic blocking diagram is replaced with a Yacht Club blocking diagram coloured by area category and read from the concept plan, with the same hover zoom and click to enlarge as Branded Home.
+- **Amenity Building figures (Yacht Club):** the table now uses the concept area totals, converted from ft²:
+  - FOH Non-Revenue 328.9 m² (3,060 ft² plus the 480 ft² Kid's Club), BOH (INT) 158.9 m², BOH (EXT) 132.9 m², Covered Non-Revenue 221.1 m²
+  - IPMS 1 620.6 m², Total Gross Buildable Area 841.7 m²
+  - Pool Area 319.6 m²; site areas: Exterior Uncovered 1,012.6 m², Landscape Planting 766.4 m², Road 307.5 m²
+  - Construction efficiency 53.0% enclosed and 65.3% covered (headline); development efficiency 0%, not meaningful
+- **Typography:** the brand faces (Sharp Roman, Sharp Serif, Founders Grotesk, Pitch) are replaced on screen with Source Serif 4 for headings, IBM Plex Sans for body text, labels and tables, and IBM Plex Mono for figures, for legibility. This is a deliberate deviation from the CP brand typography.
+- **Condo building typology (Marina Cove Resi M13):** the schematic blocking diagram is replaced with the Marina Cove Resi M13 Level 1 area plan, with hover zoom and click to enlarge. The table uses the totals from the Marina Cove Resi M13 area schedule, Rev. 0:
+  - Sellable 1,705.8 m², BOH (INT) 40.5 m², BOH (EXT) 7.4 m², Covered Sellable 298.0 m², Covered Non-Revenue 31.0 m² (2.8 m² of it covered service)
+  - IPMS 1 1,753.7 m², Total Gross Buildable Area 2,082.8 m²
+  - Pool shell 70.4 m²; site areas: Exterior Uncovered 273.6 m², Landscape Planting 93.1 m²
+  - Development efficiency 96.2% (headline); construction efficiency 97.3% enclosed and 97.6% covered
+
 ## Rev. 4, 16 October 2026
 
 - **Branded Home typology:** the schematic blocking diagram is replaced with the CP Branded Home area plan (area schedule Rev. 1), coloured with the standard category swatches. The plan zooms on hover and opens an enlarged view on click, with a full-size option.
@@ -23,19 +48,6 @@ Prepared for Irongate. Newest revision first. Each revision is also summarized i
   - The Reconciling line (enclosure delta) block was removed. Enclosure delta stays in the calculator, in step 7 and in the glossary.
 - **Category cards:** "How it is calculated" and "International references" (the IPMS, BOMA, Superficie construida and USALI equivalents, plus the links to each standard) are now collapsed sections on every category card and on the Total Gross Buildable Area card.
 - **Navigation:** a "How to use this page" link is added at the top of the side nav.
-- **Yacht Club typology (added 19 October 2026):** the schematic blocking diagram is replaced with a Yacht Club blocking diagram coloured by area category and read from the concept plan, with the same hover zoom and click to enlarge as Branded Home.
-- **Yacht Club figures (added 19 October 2026):** the table now uses the concept area totals, converted from ft²:
-  - FOH Non-Revenue 328.9 m² (3,060 ft² plus the 480 ft² Kid's Club), BOH (INT) 158.9 m², BOH (EXT) 132.9 m², Covered Non-Revenue 221.1 m²
-  - IPMS 1 620.6 m², Total Gross Buildable Area 841.7 m²
-  - Pool Area 319.6 m²; site areas: Exterior Uncovered 1,012.6 m², Landscape Planting 766.4 m², Road 307.5 m²
-  - Construction efficiency 53.0% enclosed and 65.3% covered (headline); development efficiency 0%, not meaningful
-- **Typography (added 21 October 2026):** the brand faces (Sharp Roman, Sharp Serif, Founders Grotesk, Pitch) are replaced on screen with Source Serif 4 for headings, IBM Plex Sans for body text, labels and tables, and IBM Plex Mono for figures, for legibility. This is a deliberate deviation from the CP brand typography.
-- **Condo building typology (added 22 October 2026):** the schematic blocking diagram is replaced with the Marina Cove Resi M13 Level 1 area plan, with hover zoom and click to enlarge. The table uses the totals from the Marina Cove Resi M13 area schedule, Rev. 0:
-  - Sellable 1,705.8 m², BOH (INT) 40.5 m², BOH (EXT) 7.4 m², Covered Sellable 298.0 m², Covered Non-Revenue 31.0 m² (2.8 m² of it covered service)
-  - IPMS 1 1,753.7 m², Total Gross Buildable Area 2,082.8 m²
-  - Pool shell 70.4 m²; site areas: Exterior Uncovered 273.6 m², Landscape Planting 93.1 m²
-  - Development efficiency 96.2% (headline); construction efficiency 97.3% enclosed and 97.6% covered
-- **Section renamed (22 October 2026):** "Efficiency by typology" is now "Examples per Typology".
 
 ## Rev. 3, 15 October 2026
 
