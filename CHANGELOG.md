@@ -2,6 +2,13 @@
 
 Prepared for Irongate. Newest revision first. Each revision is also summarized in the page footer.
 
+## Rev. 7, 28 October 2026
+
+- **Construction efficiency, enclosed removed:** the enclosed basis (occupiable area ÷ IPMS 1) is removed from the page and from both Excel area schedule templates (Full and Simple). Construction efficiency is now reported on the covered basis only, (Occupiable + Exterior Covered − covered service) ÷ Total Gross Building Area, as the design headline beside development efficiency. IPMS 1 stays the enclosed-basis denominator for area per key or seat.
+- **Name change:** "Covered Non-Sellable" is renamed "Covered Non-Sellable" everywhere on the page and in the Excel templates. (Spanish: "Cubierto no vendible".) Earlier entries below are updated to the new name.
+- **Standards in practice:** "Examples per typology" is renamed "Standards in practice" and moves to directly after Efficiency calculations; its sidebar link moves to the top group. Hotel is now the first, default tab.
+- **Typology headlines:** each typology card shows development efficiency and construction efficiency, covered as large headline figures above its table, with the headline ratio highlighted. The two ratio rows are removed from the table.
+
 ## Rev. 6, 23 October 2026
 
 - **Name change:** "Total Gross Buildable Area" is renamed "Total Gross Building Area" everywhere on the page, including this change log. (Spanish: "Área bruta total de edificación".)
@@ -27,13 +34,13 @@ Prepared for Irongate. Newest revision first. Each revision is also summarized i
   - The tag boxes and dashed swatch are removed from each tab heading.
 - **Amenity Building typology (Yacht Club):** the schematic blocking diagram is replaced with a Yacht Club blocking diagram coloured by area category and read from the concept plan, with the same hover zoom and click to enlarge as Branded Home.
 - **Amenity Building figures (Yacht Club):** the table now uses the concept area totals, converted from ft²:
-  - FOH Non-Revenue 328.9 m² (3,060 ft² plus the 480 ft² Kid's Club), BOH (INT) 158.9 m², BOH (EXT) 132.9 m², Covered Non-Revenue 221.1 m²
+  - FOH Non-Revenue 328.9 m² (3,060 ft² plus the 480 ft² Kid's Club), BOH (INT) 158.9 m², BOH (EXT) 132.9 m², Covered Non-Sellable 221.1 m²
   - IPMS 1 620.6 m², Total Gross Building Area 841.7 m²
   - Pool Area 319.6 m²; site areas: Exterior Uncovered 1,012.6 m², Landscape Planting 766.4 m², Road 307.5 m²
   - Construction efficiency 53.0% enclosed and 65.3% covered (headline); development efficiency 0%, not meaningful
 - **Typography:** the brand faces (Sharp Roman, Sharp Serif, Founders Grotesk, Pitch) are replaced on screen with Source Serif 4 for headings, IBM Plex Sans for body text, labels and tables, and IBM Plex Mono for figures, for legibility. This is a deliberate deviation from the CP brand typography.
 - **Condo building typology (Marina Cove Resi M13):** the schematic blocking diagram is replaced with the Marina Cove Resi M13 Level 1 area plan, with hover zoom and click to enlarge. The table uses the totals from the Marina Cove Resi M13 area schedule, Rev. 0:
-  - Sellable 1,705.8 m², BOH (INT) 40.5 m², BOH (EXT) 7.4 m², Covered Sellable 298.0 m², Covered Non-Revenue 31.0 m² (2.8 m² of it covered service)
+  - Sellable 1,705.8 m², BOH (INT) 40.5 m², BOH (EXT) 7.4 m², Covered Sellable 298.0 m², Covered Non-Sellable 31.0 m² (2.8 m² of it covered service)
   - IPMS 1 1,753.7 m², Total Gross Building Area 2,082.8 m²
   - Pool shell 70.4 m²; site areas: Exterior Uncovered 273.6 m², Landscape Planting 93.1 m²
   - Development efficiency 96.2% (headline); construction efficiency 97.3% enclosed and 97.6% covered
@@ -62,7 +69,7 @@ Prepared for Irongate. Newest revision first. Each revision is also summarized i
 
 ## Rev. 3, 15 October 2026
 
-- Exterior Covered sub-lines renamed Covered Sellable and Covered Non-Revenue (Rev. 1 and 2 called them Revenue-tied and Public).
+- Exterior Covered sub-lines renamed Covered Sellable and Covered Non-Sellable (Rev. 1 and 2 called them Revenue-tied and Public).
 - Interior AC gains a third sub-line, Circulation: corridors, lift lobbies, guest stairs and guest lifts, which move from BOH. Service lifts stay in BOH.
 - Construction efficiency now uses occupiable area (Sellable + FOH Non-Revenue) as its numerator:
   - Enclosed basis: over IPMS 1.
